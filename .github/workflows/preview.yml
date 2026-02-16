@@ -17,6 +17,7 @@ jobs:
         if: github.event.action != 'closed'
       - uses: rossjrw/pr-preview-action@v1
         with:
+          token: ${{ secrets.PREVIEW_TOKEN }} # The regular GitHub token does not work with forks
           source-dir: dist
           preview-branch: gh-pages
           umbrella-dir: pr-preview
