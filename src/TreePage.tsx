@@ -2,6 +2,7 @@ import './App.css'
 import buildingBlocks from '../building-blocks_structure.json'
 import { useState } from 'react'
 import { type BuildingBlockNode } from './BuildingBlockNode'
+import {Link} from "react-router-dom";
 
 function TreePage() {
     const root = buildingBlocks as BuildingBlockNode
@@ -69,6 +70,7 @@ function TreePage() {
         <main>
             <h1>Building Blocks</h1>
             {topLevel.length === 0 ? <p>No entries found.</p> : renderTree(topLevel)}
+            <Link to='/'>Go back</Link>
         </main>
     )
 }
