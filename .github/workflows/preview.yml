@@ -8,6 +8,14 @@ on:
       - reopened
       - synchronize
       - closed
+    paths:
+      - '*.json'
+      - 'ci/**'
+      - 'src/**'
+      - '**.js'
+      - '**.ts'
+      - '**.tsx'
+      - 'public/**'
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
