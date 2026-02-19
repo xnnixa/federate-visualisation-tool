@@ -37,7 +37,6 @@ jobs:
 
         - name: Run CI scripts
           run: |
-            find .
             chmod +x ci/*.sh
             ci/transform.sh building-blocks building-blocks_structure.json
             mv building-blocks_structure.json ./src/assets/

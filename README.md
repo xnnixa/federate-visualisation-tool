@@ -1,5 +1,11 @@
 # React + TypeScript + Vite
 
+## Description
+Live version available at https://xnnixa.github.io/federate-visualisation-tool/
+
+
+## Old readme
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
