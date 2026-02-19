@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Route, Routes, Link } from 'react-router-dom'
+import TreePage from './TreePage'
+import BlockPage from "./BlockPage.tsx";
+
+
+
+function HomePage() {
+  return <>
+    <h1>Building Blocks Explorer</h1>
+    <Link to="/tree"> Go to tree view</Link>
+    <br></br>
+    <Link to="/blocks"> Go to block view (not implemented yet)</Link>
+
+
+
+  </>
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/blocks" element={<BlockPage />}></Route>
+      <Route path="/tree" element={<TreePage />} />
+    </Routes>
   )
 }
 
