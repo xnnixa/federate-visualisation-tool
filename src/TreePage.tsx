@@ -1,5 +1,5 @@
 import './App.css'
-import buildingBlocks from '../building-blocks_structure.json'
+import buildingBlocks from './assets/building-blocks_structure.json'
 import { useState } from 'react'
 import { type BuildingBlockNode } from './BuildingBlockNode'
 import {Link} from "react-router-dom";

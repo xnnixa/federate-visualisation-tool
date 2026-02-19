@@ -12,10 +12,40 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm i && npm run build
+      # Checkout code and build the project
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout Building Blocks
+        uses: actions/checkout@v6
+        with:
+          repository: CSA-FEDERATE/Proposed-BuildingBlocks
+          path: building-blocks
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.13'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Run CI scripts
+        run: |
+          chmod +x ci/*.sh
+          ci/transform.sh building-blocks building-blocks_structure.json
+          mv building-blocks_structure.json ./src/assets/
+          ci/build.sh
         if: github.event.action != 'closed'
-      - uses: rossjrw/pr-preview-action@v1
+
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: dist
           preview-branch: gh-pages
