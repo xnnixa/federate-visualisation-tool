@@ -6,6 +6,7 @@ interface DetailPanelProps {
 }
 
 export const DetailPanel = ({ node, meta }: DetailPanelProps) => {
+    const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
   if (!node) {
     return (
       <div className="detail-panel__empty">
@@ -15,7 +16,7 @@ export const DetailPanel = ({ node, meta }: DetailPanelProps) => {
   }
 
   const link = node.path
-    ? `${meta.baseUrl}/tree/${meta.branch}/${node.path}`
+    ? `${realBaseUrl}/tree/${meta.branch}/${node.path}`
     : meta.baseUrl;
   const snippet = node.readmeSnippet
     ? node.readmeSnippet

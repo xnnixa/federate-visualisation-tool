@@ -3,8 +3,38 @@ import { DetailPanel } from "../components/DetailPanel";
 import { OverviewPanel } from "../components/OverviewPanel";
 import { SearchBar } from "../components/SearchBar";
 import { TreeView } from "../components/TreeView";
-import { buildGraph, getRepoMeta } from "../lib/github";
 import type { BBGraph, BBNode, RepoMeta } from "../types/bb";
+import { getBuildingBlocks, type BuildingBlockNode } from "../lib/parser";
+
+const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
+  type === "file" ? "blob" : "tree";
+
+const normalizePath = (path: string): string => path.replace(/\\/g, "/");
+
+const toBBNode = (node: BuildingBlockNode): BBNode => {
+  const normalizedPath = normalizePath(node.path);
+  return {
+    id: normalizedPath || node.name,
+    name: node.name,
+    path: normalizedPath,
+    type: toRepoEntryType(node.type),
+    children: node.children?.map(toBBNode),
+  };
+};
+
+const buildGraphFromRoot = (root: BBNode): BBGraph => {
+  const nodes: BBNode[] = [];
+  const edges: BBGraph["edges"] = [];
+  const visit = (node: BBNode) => {
+    nodes.push(node);
+    node.children?.forEach((child) => {
+      edges.push({ from: node.id, to: child.id });
+      visit(child);
+    });
+  };
+  visit(root);
+  return { nodes, edges, root, fallbackUsed: false };
+};
 
 export const HomePage = () => {
   const [graph, setGraph] = useState<BBGraph | null>(null);
@@ -14,7 +44,10 @@ export const HomePage = () => {
   const [pendingTreeJump, setPendingTreeJump] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const meta: RepoMeta = useMemo(() => getRepoMeta(), []);
+  const meta: RepoMeta = useMemo(
+    () => ({ owner: "", repo: "", branch: "main", baseUrl: "" }),
+    []
+  );
   const handleOverviewSelect = (node: BBNode) => {
     setSelected(node);
     setPendingTreeJump(true);
@@ -34,32 +67,23 @@ export const HomePage = () => {
   }, [selected?.path]);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        setLoading(true);
-        const data = await buildGraph(meta);
-        setGraph(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unexpected error");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    load();
-  }, [meta]);
+    try {
+      setLoading(true);
+      const root = toBBNode(getBuildingBlocks());
+      setGraph(buildGraphFromRoot(root));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unexpected error");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   if (loading) {
     return <div className="state">Loading Building Blocks...</div>;
   }
 
   if (error) {
-    return (
-      <div className="state state--error">
-        Failed to load data. {error}
-        <div>Tip: configure VITE_GITHUB_TOKEN for higher GitHub API limits.</div>
-      </div>
-    );
+    return <div className="state state--error">Failed to load data. {error}</div>;
   }
 
   if (!graph) {
