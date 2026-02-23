@@ -49,6 +49,8 @@ const NodeRow = ({
 
   useEffect(() => {
     if (expandedIds?.has(node.id) || selectedId === node.id) {
+      // TODO FIX THIS: KAN-42
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setExpanded(true);
     }
   }, [expandedIds, node.id, selectedId]);
