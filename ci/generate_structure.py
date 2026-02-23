@@ -9,14 +9,15 @@ from pathlib import Path
 from sys import argv
 
 
-def traverse_directory(root_path, relative_to=None):
+def traverse_directory(root_path, relative_to=None, is_root=False):
     """
     Recursively traverse a directory and build a hierarchical structure.
     
     Args:
         root_path: Path object of the directory to traverse
         relative_to: Path object to compute relative paths from
-        
+        is_root: Whether this is the root node
+
     Returns:
         Dictionary representing the directory structure
     """
@@ -26,11 +27,17 @@ def traverse_directory(root_path, relative_to=None):
     # Get the relative path
     rel_path = root_path.relative_to(relative_to)
     
+    # For root node, use empty string instead of the directory name
+    if is_root:
+        path_str = ""
+    else:
+        path_str = str(rel_path)
+
     # Build the node
     node = {
         "name": root_path.name,
         "type": "directory" if root_path.is_dir() else "file",
-        "path": str(rel_path)
+        "path": path_str
     }
     
     # If it's a directory, add children
@@ -79,8 +86,8 @@ def main(pathname: str, output_file: Path) -> int:
     print(f"Traversing: {dir_path}")
     
     # Generate the structure
-    structure = traverse_directory(dir_path, relative_to=dir_path.parent)
-        
+    structure = traverse_directory(dir_path, relative_to=dir_path, is_root=True)
+
     # Write to JSON file
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(structure, f, indent=2, ensure_ascii=False)

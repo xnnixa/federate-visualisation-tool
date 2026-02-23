@@ -1,0 +1,3533 @@
+{
+  "name": "building-blocks",
+  "type": "directory",
+  "path": "",
+  "children": [
+    {
+      "name": "BB-CEST",
+      "type": "directory",
+      "path": "BB-CEST",
+      "children": [
+        {
+          "name": "Artificial-Intelligence-and-Machine-Learning",
+          "type": "directory",
+          "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning",
+          "children": [
+            {
+              "name": "Data-Centric-AI-Development",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-AI-Development",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-AI-Development\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Centric-Validation-and-Testing",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-Validation-and-Testing",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-Validation-and-Testing\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Preparation-and-Management",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Preparation-and-Management",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Preparation-and-Management\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Model-Deployment-and-Inference",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Deployment-and-Inference",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Deployment-and-Inference\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Model-Development-and-Training",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Development-and-Training",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Development-and-Training\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Monitoring-and-Feedback-Loop",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Monitoring-and-Feedback-Loop",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Monitoring-and-Feedback-Loop\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Security-and-Governance-in-AI",
+              "type": "directory",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Security-and-Governance-in-AI",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Security-and-Governance-in-AI\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "Cloud-Infrastructure-and-Deployment",
+          "type": "directory",
+          "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment",
+          "children": [
+            {
+              "name": "Containerization",
+              "type": "directory",
+              "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\Containerization",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\Containerization\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Edge-to-Cloud-Integration",
+              "type": "directory",
+              "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\Edge-to-Cloud-Integration",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\Edge-to-Cloud-Integration\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Infrastructure-as-Code",
+              "type": "directory",
+              "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\Infrastructure-as-Code",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\Infrastructure-as-Code\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.MD",
+              "type": "file",
+              "path": "BB-CEST\\Cloud-Infrastructure-and-Deployment\\README.MD"
+            }
+          ]
+        },
+        {
+          "name": "Communication-and-Networking",
+          "type": "directory",
+          "path": "BB-CEST\\Communication-and-Networking",
+          "children": [
+            {
+              "name": "Data-Routing-and-Load-Balancing",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Data-Routing-and-Load-Balancing",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Data-Routing-and-Load-Balancing\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Dependable-Communication",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Dependable-Communication",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Dependable-Communication\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Edge-to-Cloud-Connectivity",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Edge-to-Cloud-Connectivity",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Edge-to-Cloud-Connectivity\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Networking-Monitoring-and-Diagnostics",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Networking-Monitoring-and-Diagnostics",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Networking-Monitoring-and-Diagnostics\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Networking-Protocols",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Networking-Protocols",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Networking-Protocols\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Secure-Communication",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Secure-Communication",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Secure-Communication\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Wireless-Connectivity",
+              "type": "directory",
+              "path": "BB-CEST\\Communication-and-Networking\\Wireless-Connectivity",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Communication-and-Networking\\Wireless-Connectivity\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\Communication-and-Networking\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "Data-Processing-and-Management",
+          "type": "directory",
+          "path": "BB-CEST\\Data-Processing-and-Management",
+          "children": [
+            {
+              "name": "Big-Data-Processing",
+              "type": "directory",
+              "path": "BB-CEST\\Data-Processing-and-Management\\Big-Data-Processing",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Data-Processing-and-Management\\Big-Data-Processing\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Governance-and-Security",
+              "type": "directory",
+              "path": "BB-CEST\\Data-Processing-and-Management\\Data-Governance-and-Security",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Data-Processing-and-Management\\Data-Governance-and-Security\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Storage-and-Retrieval",
+              "type": "directory",
+              "path": "BB-CEST\\Data-Processing-and-Management\\Data-Storage-and-Retrieval",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Data-Processing-and-Management\\Data-Storage-and-Retrieval\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Streaming-and-Real-Time-Processing",
+              "type": "directory",
+              "path": "BB-CEST\\Data-Processing-and-Management\\Data-Streaming-and-Real-Time-Processing",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Data-Processing-and-Management\\Data-Streaming-and-Real-Time-Processing\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Tranformation-and-Integration",
+              "type": "directory",
+              "path": "BB-CEST\\Data-Processing-and-Management\\Data-Tranformation-and-Integration",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Data-Processing-and-Management\\Data-Tranformation-and-Integration\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "BB_Eclipse_TractusX.md",
+              "type": "file",
+              "path": "BB-CEST\\Data-Processing-and-Management\\BB_Eclipse_TractusX.md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\Data-Processing-and-Management\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "Development-Testing-and-Simulation-Environments",
+          "type": "directory",
+          "path": "BB-CEST\\Development-Testing-and-Simulation-Environments",
+          "children": [
+            {
+              "name": "Cloud-Based-Development-Environments",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Cloud-Based-Development-Environments",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Cloud-Based-Development-Environments\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Continuous-Integration-Continuous-Deployment",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Continuous-Integration-Continuous-Deployment",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Continuous-Integration-Continuous-Deployment\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Debugging-and-Monitoring",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Debugging-and-Monitoring",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Debugging-and-Monitoring\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Integrated-Development-Environments",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Integrated-Development-Environments",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Integrated-Development-Environments\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Performance-and-Load-Testing",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Performance-and-Load-Testing",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Performance-and-Load-Testing\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Simulation-and-Emulation-Tools",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools",
+              "children": [
+                {
+                  "name": "BB_Eclipse_Cloe.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Eclipse_Cloe.md"
+                },
+                {
+                  "name": "BB_Eclipse_esmini.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Eclipse_esmini.md"
+                },
+                {
+                  "name": "BB_Eclipse_Mosaic.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Eclipse_Mosaic.md"
+                },
+                {
+                  "name": "BB_Eclipse_openPASS.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Eclipse_openPASS.md"
+                },
+                {
+                  "name": "BB_Eclipse_SCM.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Eclipse_SCM.md"
+                },
+                {
+                  "name": "BB_Eclipse_SUMO.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Eclipse_SUMO.md"
+                },
+                {
+                  "name": "BB_Lichtblick.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Lichtblick.md"
+                },
+                {
+                  "name": "BB_OSTAR.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_OSTAR.md"
+                },
+                {
+                  "name": "BB_SODAsim.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_SODAsim.md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Software-Development-Kits",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Software-Development-Kits",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Software-Development-Kits\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Testing-Frameworks",
+              "type": "directory",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Testing-Frameworks",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\Testing-Frameworks\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\Development-Testing-and-Simulation-Environments\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "Operations-and-Maintenance",
+          "type": "directory",
+          "path": "BB-CEST\\Operations-and-Maintenance",
+          "children": [
+            {
+              "name": "Automation-and-Orchestration",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration",
+              "children": [
+                {
+                  "name": "Automated-Testing-and-Validation",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Automated-Testing-and-Validation",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Automated-Testing-and-Validation\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Configuration-as-Code",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Configuration-as-Code",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Configuration-as-Code\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Driven-Integration-via-Observations",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Data-Driven-Integration-via-Observations",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Data-Driven-Integration-via-Observations\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Event-Driven-Automation",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Event-Driven-Automation",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Event-Driven-Automation\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Policy-and-Compliance-Automation",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Policy-and-Compliance-Automation",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Policy-and-Compliance-Automation\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Task-Automation",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Task-Automation",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Task-Automation\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Workflow-Orchestration",
+                  "type": "directory",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Workflow-Orchestration",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Workflow-Orchestration\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "BB_Eclipse_PullPiriPackageService.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\BB_Eclipse_PullPiriPackageService.md"
+                },
+                {
+                  "name": "BB_Eclipse_SymphonyOrchestrationLayer.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\BB_Eclipse_SymphonyOrchestrationLayer.md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Incident-Management",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Incident-Management",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Incident-Management\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Lifecycle-Management",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Lifecycle-Management",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Lifecycle-Management\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Monitoring-and-Observability",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Monitoring-and-Observability",
+              "children": [
+                {
+                  "name": "BB_Eclipse_AnkaiosDashboard.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Monitoring-and-Observability\\BB_Eclipse_AnkaiosDashboard.md"
+                },
+                {
+                  "name": "BB_Eclipse_MutoDashboard.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Monitoring-and-Observability\\BB_Eclipse_MutoDashboard.md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Monitoring-and-Observability\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Over-the-Air-Updates",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Over-the-Air-Updates",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Over-the-Air-Updates\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Predictive-Maintenance",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Predictive-Maintenance",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Predictive-Maintenance\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Security-and-Compiance-in-Operation",
+              "type": "directory",
+              "path": "BB-CEST\\Operations-and-Maintenance\\Security-and-Compiance-in-Operation",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Operations-and-Maintenance\\Security-and-Compiance-in-Operation\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\Operations-and-Maintenance\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "Security-and-Compliance",
+          "type": "directory",
+          "path": "BB-CEST\\Security-and-Compliance",
+          "children": [
+            {
+              "name": "Application-Security",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Application-Security",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Application-Security\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Compliance-Management-with-Data-Governance",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Compliance-Management-with-Data-Governance",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Compliance-Management-with-Data-Governance\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Centric-Access-and-Protection",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Data-Centric-Access-and-Protection",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Data-Centric-Access-and-Protection\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Security",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Data-Security",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Data-Security\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Identity-and-Access-Management",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Identity-and-Access-Management",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Identity-and-Access-Management\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Incident-Management-and-Recovery",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Incident-Management-and-Recovery",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Incident-Management-and-Recovery\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Network-Security",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Network-Security",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Network-Security\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Threat-Detection-and-Response",
+              "type": "directory",
+              "path": "BB-CEST\\Security-and-Compliance\\Threat-Detection-and-Response",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\Security-and-Compliance\\Threat-Detection-and-Response\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\Security-and-Compliance\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "User-and-Developer-Portals",
+          "type": "directory",
+          "path": "BB-CEST\\User-and-Developer-Portals",
+          "children": [
+            {
+              "name": "Analytics-and-Insights",
+              "type": "directory",
+              "path": "BB-CEST\\User-and-Developer-Portals\\Analytics-and-Insights",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\User-and-Developer-Portals\\Analytics-and-Insights\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Collaboration-Tools",
+              "type": "directory",
+              "path": "BB-CEST\\User-and-Developer-Portals\\Collaboration-Tools",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\User-and-Developer-Portals\\Collaboration-Tools\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Developer-Portals",
+              "type": "directory",
+              "path": "BB-CEST\\User-and-Developer-Portals\\Developer-Portals",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\User-and-Developer-Portals\\Developer-Portals\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Integration-with-SDV-EcoSystem",
+              "type": "directory",
+              "path": "BB-CEST\\User-and-Developer-Portals\\Integration-with-SDV-EcoSystem",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\User-and-Developer-Portals\\Integration-with-SDV-EcoSystem\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Securtiy-and-Access-Control",
+              "type": "directory",
+              "path": "BB-CEST\\User-and-Developer-Portals\\Securtiy-and-Access-Control",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\User-and-Developer-Portals\\Securtiy-and-Access-Control\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "User-Portals",
+              "type": "directory",
+              "path": "BB-CEST\\User-and-Developer-Portals\\User-Portals",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "BB-CEST\\User-and-Developer-Portals\\User-Portals\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-CEST\\User-and-Developer-Portals\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB_Eclipse_CSP.md",
+          "type": "file",
+          "path": "BB-CEST\\BB_Eclipse_CSP.md"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-CEST\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-CMU",
+      "type": "directory",
+      "path": "BB-CMU",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-CMU\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-CSC",
+      "type": "directory",
+      "path": "BB-CSC",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-CSC\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-CSC-TC",
+      "type": "directory",
+      "path": "BB-CSC-TC",
+      "children": [
+        {
+          "name": "RapidPrototyping",
+          "type": "directory",
+          "path": "BB-CSC-TC\\RapidPrototyping",
+          "children": [
+            {
+              "name": "BB_EclipseAutoWRX.md",
+              "type": "file",
+              "path": "BB-CSC-TC\\RapidPrototyping\\BB_EclipseAutoWRX.md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-CSC-TC\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-EST",
+      "type": "directory",
+      "path": "BB-EST",
+      "children": [
+        {
+          "name": "Build-and-Implementation",
+          "type": "directory",
+          "path": "BB-EST\\Build-and-Implementation",
+          "children": [
+            {
+              "name": "Embedded-Linux",
+              "type": "directory",
+              "path": "BB-EST\\Build-and-Implementation\\Embedded-Linux",
+              "children": [
+                {
+                  "name": "BB_YoctoProject.md",
+                  "type": "file",
+                  "path": "BB-EST\\Build-and-Implementation\\Embedded-Linux\\BB_YoctoProject.md"
+                }
+              ]
+            },
+            {
+              "name": "BB_VELOCITAS.md",
+              "type": "file",
+              "path": "BB-EST\\Build-and-Implementation\\BB_VELOCITAS.md"
+            }
+          ]
+        },
+        {
+          "name": "Deployment",
+          "type": "directory",
+          "path": "BB-EST\\Deployment"
+        },
+        {
+          "name": "Design",
+          "type": "directory",
+          "path": "BB-EST\\Design",
+          "children": [
+            {
+              "name": "BB_SKyBT.md",
+              "type": "file",
+              "path": "BB-EST\\Design\\BB_SKyBT.md"
+            }
+          ]
+        },
+        {
+          "name": "Generator",
+          "type": "directory",
+          "path": "BB-EST\\Generator",
+          "children": [
+            {
+              "name": "BB_IFEX.md",
+              "type": "file",
+              "path": "BB-EST\\Generator\\BB_IFEX.md"
+            }
+          ]
+        },
+        {
+          "name": "Implementation",
+          "type": "directory",
+          "path": "BB-EST\\Implementation"
+        },
+        {
+          "name": "Monitoring-and-Diagnostics",
+          "type": "directory",
+          "path": "BB-EST\\Monitoring-and-Diagnostics"
+        },
+        {
+          "name": "Requirements",
+          "type": "directory",
+          "path": "BB-EST\\Requirements",
+          "children": [
+            {
+              "name": "BB_openfasttrace.md",
+              "type": "file",
+              "path": "BB-EST\\Requirements\\BB_openfasttrace.md"
+            },
+            {
+              "name": "BB_SphinxNeeds.md",
+              "type": "file",
+              "path": "BB-EST\\Requirements\\BB_SphinxNeeds.md"
+            }
+          ]
+        },
+        {
+          "name": "Software-Development-Kit",
+          "type": "directory",
+          "path": "BB-EST\\Software-Development-Kit",
+          "children": [
+            {
+              "name": "BB_API_verification.md",
+              "type": "file",
+              "path": "BB-EST\\Software-Development-Kit\\BB_API_verification.md"
+            },
+            {
+              "name": "BB_Library_and_variant_management.md",
+              "type": "file",
+              "path": "BB-EST\\Software-Development-Kit\\BB_Library_and_variant_management.md"
+            }
+          ]
+        },
+        {
+          "name": "Testing",
+          "type": "directory",
+          "path": "BB-EST\\Testing",
+          "children": [
+            {
+              "name": "BB_Autowrx.md",
+              "type": "file",
+              "path": "BB-EST\\Testing\\BB_Autowrx.md"
+            },
+            {
+              "name": "BB_Central_Data_Service_Playground.md",
+              "type": "file",
+              "path": "BB-EST\\Testing\\BB_Central_Data_Service_Playground.md"
+            },
+            {
+              "name": "BB_Eclipse_OpenDUT.md",
+              "type": "file",
+              "path": "BB-EST\\Testing\\BB_Eclipse_OpenDUT.md"
+            },
+            {
+              "name": "BB_OpenXilEnv.md",
+              "type": "file",
+              "path": "BB-EST\\Testing\\BB_OpenXilEnv.md"
+            },
+            {
+              "name": "BB_SIL-Kit.md",
+              "type": "file",
+              "path": "BB-EST\\Testing\\BB_SIL-Kit.md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-EST\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-MU",
+      "type": "directory",
+      "path": "BB-MU",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-MU\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-SC",
+      "type": "directory",
+      "path": "BB-SC",
+      "children": [
+        {
+          "name": "1-HWLayer",
+          "type": "directory",
+          "path": "BB-SC\\1-HWLayer",
+          "children": [
+            {
+              "name": "HardwareAbstraction",
+              "type": "directory",
+              "path": "BB-SC\\1-HWLayer\\HardwareAbstraction",
+              "children": [
+                {
+                  "name": "Type-1-Hypervisor",
+                  "type": "directory",
+                  "path": "BB-SC\\1-HWLayer\\HardwareAbstraction\\Type-1-Hypervisor",
+                  "children": [
+                    {
+                      "name": "XENProject",
+                      "type": "directory",
+                      "path": "BB-SC\\1-HWLayer\\HardwareAbstraction\\Type-1-Hypervisor\\XENProject",
+                      "children": [
+                        {
+                          "name": "BB_XENHypervisor.md",
+                          "type": "file",
+                          "path": "BB-SC\\1-HWLayer\\HardwareAbstraction\\Type-1-Hypervisor\\XENProject\\BB_XENHypervisor.md"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Security",
+              "type": "directory",
+              "path": "BB-SC\\1-HWLayer\\Security",
+              "children": [
+                {
+                  "name": "BB_Eclipse_Heimlig.md",
+                  "type": "file",
+                  "path": "BB-SC\\1-HWLayer\\Security\\BB_Eclipse_Heimlig.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-SC\\1-HWLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "2a-OSLayer",
+          "type": "directory",
+          "path": "BB-SC\\2a-OSLayer",
+          "children": [
+            {
+              "name": "Linux",
+              "type": "directory",
+              "path": "BB-SC\\2a-OSLayer\\Linux",
+              "children": [
+                {
+                  "name": "BB_AndroidAutomotive.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Linux\\BB_AndroidAutomotive.md"
+                },
+                {
+                  "name": "BB_AutomotiveGradeLinux.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Linux\\BB_AutomotiveGradeLinux.md"
+                }
+              ]
+            },
+            {
+              "name": "RTOS",
+              "type": "directory",
+              "path": "BB-SC\\2a-OSLayer\\RTOS",
+              "children": [
+                {
+                  "name": "BB_Apache_NuttX.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\RTOS\\BB_Apache_NuttX.md"
+                },
+                {
+                  "name": "BB_Eclipse_OpenBSW.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\RTOS\\BB_Eclipse_OpenBSW.md"
+                },
+                {
+                  "name": "BB_Eclipse_ThreadX.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\RTOS\\BB_Eclipse_ThreadX.md"
+                },
+                {
+                  "name": "BB_LF_Zephyr.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\RTOS\\BB_LF_Zephyr.md"
+                },
+                {
+                  "name": "BB_seL4.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\RTOS\\BB_seL4.md"
+                }
+              ]
+            },
+            {
+              "name": "Stacks",
+              "type": "directory",
+              "path": "BB-SC\\2a-OSLayer\\Stacks",
+              "children": [
+                {
+                  "name": "BB_AUTOWARE.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Stacks\\BB_AUTOWARE.md"
+                },
+                {
+                  "name": "BB_Eclipse_Leda.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Stacks\\BB_Eclipse_Leda.md"
+                },
+                {
+                  "name": "BB_Eclipse_Oniro.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Stacks\\BB_Eclipse_Oniro.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Stacks\\BB_Eclipse_S-CORE.md"
+                },
+                {
+                  "name": "BB_HaloOS.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Stacks\\BB_HaloOS.md"
+                },
+                {
+                  "name": "BB_OpenHarmony.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Stacks\\BB_OpenHarmony.md"
+                }
+              ]
+            },
+            {
+              "name": "Time",
+              "type": "directory",
+              "path": "BB-SC\\2a-OSLayer\\Time"
+            },
+            {
+              "name": "Virtualization",
+              "type": "directory",
+              "path": "BB-SC\\2a-OSLayer\\Virtualization",
+              "children": [
+                {
+                  "name": "BB_ L4Re.md",
+                  "type": "file",
+                  "path": "BB-SC\\2a-OSLayer\\Virtualization\\BB_ L4Re.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-SC\\2a-OSLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "2b-MWLayer",
+          "type": "directory",
+          "path": "BB-SC\\2b-MWLayer",
+          "children": [
+            {
+              "name": "Communication",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Communication",
+              "children": [
+                {
+                  "name": "RTPS-Types",
+                  "type": "directory",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types",
+                  "children": [
+                    {
+                      "name": "cycloneDDS",
+                      "type": "directory",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\cycloneDDS",
+                      "children": [
+                        {
+                          "name": "BB_cycloneDDS.md",
+                          "type": "file",
+                          "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\cycloneDDS\\BB_cycloneDDS.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "DustDDS",
+                      "type": "directory",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\DustDDS",
+                      "children": [
+                        {
+                          "name": "BB_DustDDS.md",
+                          "type": "file",
+                          "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\DustDDS\\BB_DustDDS.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "embeddedRTPS",
+                      "type": "directory",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\embeddedRTPS",
+                      "children": [
+                        {
+                          "name": "BB_Constraint_DDS_embeddedRTPS.md",
+                          "type": "file",
+                          "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\embeddedRTPS\\BB_Constraint_DDS_embeddedRTPS.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FastDDS",
+                      "type": "directory",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\FastDDS",
+                      "children": [
+                        {
+                          "name": "BB_FastDDS.md",
+                          "type": "file",
+                          "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\FastDDS\\BB_FastDDS.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "OpenDDS",
+                      "type": "directory",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\OpenDDS",
+                      "children": [
+                        {
+                          "name": "BB_OpenDDS.md",
+                          "type": "file",
+                          "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\OpenDDS\\BB_OpenDDS.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "vSomeIP",
+                      "type": "directory",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\vSomeIP",
+                      "children": [
+                        {
+                          "name": "BB_vSomeIP.md",
+                          "type": "file",
+                          "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\vSomeIP\\BB_vSomeIP.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RTPS-Types.md",
+                      "type": "file",
+                      "path": "BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\RTPS-Types.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "BB_COVESA_Open1722.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_COVESA_Open1722.md"
+                },
+                {
+                  "name": "BB_COVESA_uServices.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_COVESA_uServices.md"
+                },
+                {
+                  "name": "BB_COVESA_VISSR.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_COVESA_VISSR.md"
+                },
+                {
+                  "name": "BB_Eclipse_Canought.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_Canought.md"
+                },
+                {
+                  "name": "BB_Eclipse_eCAL.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_eCAL.md"
+                },
+                {
+                  "name": "BB_Eclipse_iceoryx2.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_iceoryx2.md"
+                },
+                {
+                  "name": "BB_Eclipse_KUKSA.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_KUKSA.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE_LOLA.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_S-CORE_LOLA.md"
+                },
+                {
+                  "name": "BB_Eclipse_uProtocol.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_uProtocol.md"
+                },
+                {
+                  "name": "BB_Eclipse_Zenoh.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_Eclipse_Zenoh.md"
+                },
+                {
+                  "name": "BB_OpenSOVD.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_OpenSOVD.md"
+                },
+                {
+                  "name": "BB_XCPlite.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Communication\\BB_XCPlite.md"
+                }
+              ]
+            },
+            {
+              "name": "Configuration",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Configuration"
+            },
+            {
+              "name": "Deployment-Management",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Deployment-Management",
+              "children": [
+                {
+                  "name": "BB_Eclipse_Ankaios.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Deployment-Management\\BB_Eclipse_Ankaios.md"
+                },
+                {
+                  "name": "BB_Eclipse_SymphonyAgents.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Deployment-Management\\BB_Eclipse_SymphonyAgents.md"
+                }
+              ]
+            },
+            {
+              "name": "Diagnostics",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Diagnostics",
+              "children": [
+                {
+                  "name": "BB_Eclipse_OpenSOVD.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Diagnostics\\BB_Eclipse_OpenSOVD.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE_logging.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Diagnostics\\BB_Eclipse_S-CORE_logging.md"
+                }
+              ]
+            },
+            {
+              "name": "Execution-Management",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Execution-Management",
+              "children": [
+                {
+                  "name": "BB_Eclipse_BlueChi.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_BlueChi.md"
+                },
+                {
+                  "name": "BB_Eclipse_Muto.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_Muto.md"
+                },
+                {
+                  "name": "BB_Eclipse_PullPiriPackageServiceOrchestrator.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_PullPiriPackageServiceOrchestrator.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE_FEO.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_S-CORE_FEO.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE_kyron.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_S-CORE_kyron.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE_lifecycle.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_S-CORE_lifecycle.md"
+                },
+                {
+                  "name": "BB_Eclipse_S-CORE_orchestration.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Execution-Management\\BB_Eclipse_S-CORE_orchestration.md"
+                }
+              ]
+            },
+            {
+              "name": "Platform-Health-Management",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Platform-Health-Management"
+            },
+            {
+              "name": "Power-Management",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Power-Management"
+            },
+            {
+              "name": "Security",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Security",
+              "children": [
+                {
+                  "name": "BB_quantumSAR.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Security\\BB_quantumSAR.md"
+                }
+              ]
+            },
+            {
+              "name": "Storage",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Storage",
+              "children": [
+                {
+                  "name": "BB_Eclipse_S-CORE_persistency.md",
+                  "type": "file",
+                  "path": "BB-SC\\2b-MWLayer\\Storage\\BB_Eclipse_S-CORE_persistency.md"
+                }
+              ]
+            },
+            {
+              "name": "Tools-and-Methods",
+              "type": "directory",
+              "path": "BB-SC\\2b-MWLayer\\Tools-and-Methods"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-SC\\2b-MWLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "3-AppLayer",
+          "type": "directory",
+          "path": "BB-SC\\3-AppLayer",
+          "children": [
+            {
+              "name": "API",
+              "type": "directory",
+              "path": "BB-SC\\3-AppLayer\\API",
+              "children": [
+                {
+                  "name": "BB_Automotive_API_Framework.md",
+                  "type": "file",
+                  "path": "BB-SC\\3-AppLayer\\API\\BB_Automotive_API_Framework.md"
+                },
+                {
+                  "name": "BB_Open_Vehicle_API.md",
+                  "type": "file",
+                  "path": "BB-SC\\3-AppLayer\\API\\BB_Open_Vehicle_API.md"
+                }
+              ]
+            },
+            {
+              "name": "Communication",
+              "type": "directory",
+              "path": "BB-SC\\3-AppLayer\\Communication"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "BB-SC\\3-AppLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-SC\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "BB-SC-TC",
+      "type": "directory",
+      "path": "BB-SC-TC",
+      "children": [
+        {
+          "name": "Testing",
+          "type": "directory",
+          "path": "BB-SC-TC\\Testing"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "BB-SC-TC\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "other",
+      "type": "directory",
+      "path": "other",
+      "children": [
+        {
+          "name": "figures",
+          "type": "directory",
+          "path": "other\\figures",
+          "children": [
+            {
+              "name": "BB-CSC.png",
+              "type": "file",
+              "path": "other\\figures\\BB-CSC.png"
+            },
+            {
+              "name": "BB-SC.png",
+              "type": "file",
+              "path": "other\\figures\\BB-SC.png"
+            },
+            {
+              "name": "FEDERATE_arch.png",
+              "type": "file",
+              "path": "other\\figures\\FEDERATE_arch.png"
+            },
+            {
+              "name": "Process_description.PNG",
+              "type": "file",
+              "path": "other\\figures\\Process_description.PNG"
+            },
+            {
+              "name": "tool-chain-components.png",
+              "type": "file",
+              "path": "other\\figures\\tool-chain-components.png"
+            }
+          ]
+        },
+        {
+          "name": "glossary",
+          "type": "directory",
+          "path": "other\\glossary"
+        },
+        {
+          "name": "scripts",
+          "type": "directory",
+          "path": "other\\scripts",
+          "children": [
+            {
+              "name": "bb_standardizer.py",
+              "type": "file",
+              "path": "other\\scripts\\bb_standardizer.py"
+            },
+            {
+              "name": "output_file_generator.py",
+              "type": "file",
+              "path": "other\\scripts\\output_file_generator.py"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "other\\scripts\\README.md"
+            },
+            {
+              "name": "readme_generator.py",
+              "type": "file",
+              "path": "other\\scripts\\readme_generator.py"
+            }
+          ]
+        },
+        {
+          "name": "technical_description_container",
+          "type": "directory",
+          "path": "other\\technical_description_container"
+        },
+        {
+          "name": "utils",
+          "type": "directory",
+          "path": "other\\utils",
+          "children": [
+            {
+              "name": "Abbreviations.md",
+              "type": "file",
+              "path": "other\\utils\\Abbreviations.md"
+            },
+            {
+              "name": "BB_Implementation_guideline.md",
+              "type": "file",
+              "path": "other\\utils\\BB_Implementation_guideline.md"
+            },
+            {
+              "name": "BB_Template.md",
+              "type": "file",
+              "path": "other\\utils\\BB_Template.md"
+            },
+            {
+              "name": "README_base.md",
+              "type": "file",
+              "path": "other\\utils\\README_base.md"
+            },
+            {
+              "name": "structure.md",
+              "type": "file",
+              "path": "other\\utils\\structure.md"
+            },
+            {
+              "name": "structure_wip.md",
+              "type": "file",
+              "path": "other\\utils\\structure_wip.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S-BB",
+      "type": "directory",
+      "path": "S-BB",
+      "children": [
+        {
+          "name": "1-HWLayer",
+          "type": "directory",
+          "path": "S-BB\\1-HWLayer",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "S-BB\\1-HWLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "2a-OSLayer",
+          "type": "directory",
+          "path": "S-BB\\2a-OSLayer",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "S-BB\\2a-OSLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "2b-MWLayer",
+          "type": "directory",
+          "path": "S-BB\\2b-MWLayer",
+          "children": [
+            {
+              "name": "Communication",
+              "type": "directory",
+              "path": "S-BB\\2b-MWLayer\\Communication",
+              "children": [
+                {
+                  "name": "BB_VISS.md",
+                  "type": "file",
+                  "path": "S-BB\\2b-MWLayer\\Communication\\BB_VISS.md"
+                }
+              ]
+            },
+            {
+              "name": "BB_Common_Vehicle_Capabilities.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_Common_Vehicle_Capabilities.md"
+            },
+            {
+              "name": "BB_Data_Architecture_Terminology.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_Data_Architecture_Terminology.md"
+            },
+            {
+              "name": "BB_eSyncAlliance.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_eSyncAlliance.md"
+            },
+            {
+              "name": "BB_EV_Charging_Event_Data_Aggregation.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_EV_Charging_Event_Data_Aggregation.md"
+            },
+            {
+              "name": "BB_HIM.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_HIM.md"
+            },
+            {
+              "name": "BB_In_Car_Wallet_Payments_and_Orchestration.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_In_Car_Wallet_Payments_and_Orchestration.md"
+            },
+            {
+              "name": "BB_PilotAutoReferenceDesign.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_PilotAutoReferenceDesign.md"
+            },
+            {
+              "name": "BB_Private_Cross_OEM_Joint_Compute_for_EV_Charging.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_Private_Cross_OEM_Joint_Compute_for_EV_Charging.md"
+            },
+            {
+              "name": "BB_Unified_Push_Notification.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_Unified_Push_Notification.md"
+            },
+            {
+              "name": "BB_VSS.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\BB_VSS.md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "S-BB\\2b-MWLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "3-AppLayer",
+          "type": "directory",
+          "path": "S-BB\\3-AppLayer",
+          "children": [
+            {
+              "name": "BB_LF_EVerest.md",
+              "type": "file",
+              "path": "S-BB\\3-AppLayer\\BB_LF_EVerest.md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "S-BB\\3-AppLayer\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "Generator",
+          "type": "directory",
+          "path": "S-BB\\Generator",
+          "children": [
+            {
+              "name": "BB_Commercial_Vehicle_Information_Specifications.md",
+              "type": "file",
+              "path": "S-BB\\Generator\\BB_Commercial_Vehicle_Information_Specifications.md"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "S-BB\\README.md"
+        }
+      ]
+    },
+    {
+      "name": "UseCases",
+      "type": "directory",
+      "path": "UseCases",
+      "children": [
+        {
+          "name": "Scenarios",
+          "type": "directory",
+          "path": "UseCases\\Scenarios"
+        }
+      ]
+    },
+    {
+      "name": "WorkInProgress",
+      "type": "directory",
+      "path": "WorkInProgress",
+      "children": [
+        {
+          "name": "BB-CEST",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-CEST",
+          "children": [
+            {
+              "name": "Artificial-Intelligence-and-Machine-Learning",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning",
+              "children": [
+                {
+                  "name": "Data-Centric-AI-Development",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-AI-Development",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-AI-Development\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Centric-Validation-and-Testing",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-Validation-and-Testing",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Centric-Validation-and-Testing\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Preparation-and-Management",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Preparation-and-Management",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Data-Preparation-and-Management\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Model-Deployment-and-Inference",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Deployment-and-Inference",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Deployment-and-Inference\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Model-Development-and-Training",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Development-and-Training",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Model-Development-and-Training\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Monitoring-and-Feedback-Loop",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Monitoring-and-Feedback-Loop",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Monitoring-and-Feedback-Loop\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Security-and-Governance-in-AI",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Security-and-Governance-in-AI",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\Security-and-Governance-in-AI\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Artificial-Intelligence-and-Machine-Learning\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Build-and-Implementation",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Build-and-Implementation",
+              "children": [
+                {
+                  "name": "BB_LLMAgentForHandlingLargeAutomotiveSoftwareModels.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Build-and-Implementation\\BB_LLMAgentForHandlingLargeAutomotiveSoftwareModels.md"
+                }
+              ]
+            },
+            {
+              "name": "Cloud-Infrastructure-and-Deployment",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment",
+              "children": [
+                {
+                  "name": "Containerization",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\Containerization",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\Containerization\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Edge-to-Cloud-Integration",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\Edge-to-Cloud-Integration",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\Edge-to-Cloud-Integration\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Infrastructure-as-Code",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\Infrastructure-as-Code",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\Infrastructure-as-Code\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.MD",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Cloud-Infrastructure-and-Deployment\\README.MD"
+                }
+              ]
+            },
+            {
+              "name": "Communication-and-Networking",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking",
+              "children": [
+                {
+                  "name": "Data-Routing-and-Load-Balancing",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Data-Routing-and-Load-Balancing",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Data-Routing-and-Load-Balancing\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Dependable-Communication",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Dependable-Communication",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Dependable-Communication\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Edge-to-Cloud-Connectivity",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Edge-to-Cloud-Connectivity",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Edge-to-Cloud-Connectivity\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Networking-Monitoring-and-Diagnostics",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Networking-Monitoring-and-Diagnostics",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Networking-Monitoring-and-Diagnostics\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Networking-Protocols",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Networking-Protocols",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Networking-Protocols\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Secure-Communication",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Secure-Communication",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Secure-Communication\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Wireless-Connectivity",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Wireless-Connectivity",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\Wireless-Connectivity\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Communication-and-Networking\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Data-Processing-and-Management",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management",
+              "children": [
+                {
+                  "name": "Big-Data-Processing",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Big-Data-Processing",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Big-Data-Processing\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Governance-and-Security",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Governance-and-Security",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Governance-and-Security\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Storage-and-Retrieval",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Storage-and-Retrieval",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Storage-and-Retrieval\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Streaming-and-Real-Time-Processing",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Streaming-and-Real-Time-Processing",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Streaming-and-Real-Time-Processing\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Tranformation-and-Integration",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Tranformation-and-Integration",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\Data-Tranformation-and-Integration\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Data-Processing-and-Management\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Development-Testing-and-Simulation-Environments",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments",
+              "children": [
+                {
+                  "name": "Cloud-Based-Development-Environments",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Cloud-Based-Development-Environments",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Cloud-Based-Development-Environments\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Continuous-Integration-Continuous-Deployment",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Continuous-Integration-Continuous-Deployment",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Continuous-Integration-Continuous-Deployment\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Debugging-and-Monitoring",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Debugging-and-Monitoring",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Debugging-and-Monitoring\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Integrated-Development-Environments",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Integrated-Development-Environments",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Integrated-Development-Environments\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Performance-and-Load-Testing",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Performance-and-Load-Testing",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Performance-and-Load-Testing\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Simulation-and-Emulation-Tools",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools",
+                  "children": [
+                    {
+                      "name": "BB_Car_Simulator.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_Car_Simulator.md"
+                    },
+                    {
+                      "name": "BB_RemotiveCloud.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\BB_RemotiveCloud.md"
+                    },
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Simulation-and-Emulation-Tools\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Software-Development-Kits",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Software-Development-Kits",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Software-Development-Kits\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Testing-Frameworks",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Testing-Frameworks",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\Testing-Frameworks\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Development-Testing-and-Simulation-Environments\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Operations-and-Maintenance",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance",
+              "children": [
+                {
+                  "name": "Automation-and-Orchestration",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration",
+                  "children": [
+                    {
+                      "name": "Automated-Testing-and-Validation",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Automated-Testing-and-Validation",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Automated-Testing-and-Validation\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Configuration-as-Code",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Configuration-as-Code",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Configuration-as-Code\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Data-Driven-Integration-via-Observations",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Data-Driven-Integration-via-Observations",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Data-Driven-Integration-via-Observations\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Event-Driven-Automation",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Event-Driven-Automation",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Event-Driven-Automation\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Policy-and-Compliance-Automation",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Policy-and-Compliance-Automation",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Policy-and-Compliance-Automation\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Task-Automation",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Task-Automation",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Task-Automation\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Workflow-Orchestration",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Workflow-Orchestration",
+                      "children": [
+                        {
+                          "name": "README.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\Workflow-Orchestration\\README.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Automation-and-Orchestration\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Incident-Management",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Incident-Management",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Incident-Management\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Lifecycle-Management",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Lifecycle-Management",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Lifecycle-Management\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Monitoring-and-Observability",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Monitoring-and-Observability",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Monitoring-and-Observability\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Over-the-Air-Updates",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Over-the-Air-Updates",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Over-the-Air-Updates\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Predictive-Maintenance",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Predictive-Maintenance",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Predictive-Maintenance\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Security-and-Compiance-in-Operation",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Security-and-Compiance-in-Operation",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\Security-and-Compiance-in-Operation\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Operations-and-Maintenance\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "Security-and-Compliance",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance",
+              "children": [
+                {
+                  "name": "Application-Security",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Application-Security",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Application-Security\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Compliance-Management-with-Data-Governance",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Compliance-Management-with-Data-Governance",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Compliance-Management-with-Data-Governance\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Centric-Access-and-Protection",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Data-Centric-Access-and-Protection",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Data-Centric-Access-and-Protection\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Data-Security",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Data-Security",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Data-Security\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Identity-and-Access-Management",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Identity-and-Access-Management",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Identity-and-Access-Management\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Incident-Management-and-Recovery",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Incident-Management-and-Recovery",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Incident-Management-and-Recovery\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Network-Security",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Network-Security",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Network-Security\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Threat-Detection-and-Response",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Threat-Detection-and-Response",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\Threat-Detection-and-Response\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\Security-and-Compliance\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "User-and-Developer-Portals",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals",
+              "children": [
+                {
+                  "name": "Analytics-and-Insights",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Analytics-and-Insights",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Analytics-and-Insights\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Collaboration-Tools",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Collaboration-Tools",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Collaboration-Tools\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Developer-Portals",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Developer-Portals",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Developer-Portals\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Integration-with-SDV-EcoSystem",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Integration-with-SDV-EcoSystem",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Integration-with-SDV-EcoSystem\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Securtiy-and-Access-Control",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Securtiy-and-Access-Control",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\Securtiy-and-Access-Control\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "User-Portals",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\User-Portals",
+                  "children": [
+                    {
+                      "name": "README.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\User-Portals\\README.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-CEST\\User-and-Developer-Portals\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CEST\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-CMU",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-CMU",
+          "children": [
+            {
+              "name": "BB_Digital_Twin_proxy_in_cloud.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CMU\\BB_Digital_Twin_proxy_in_cloud.md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CMU\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-CSC",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-CSC",
+          "children": [
+            {
+              "name": "BB_Active_diagnostics_and_repair_services.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Active_diagnostics_and_repair_services.md"
+            },
+            {
+              "name": "BB_App_and_services_store.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_App_and_services_store.md"
+            },
+            {
+              "name": "BB_Cloud_container_and_OS.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Cloud_container_and_OS.md"
+            },
+            {
+              "name": "BB_Config_and_settngs_collector.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Config_and_settngs_collector.md"
+            },
+            {
+              "name": "BB_Data_manager_ensuring_compliance_with_regulation.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Data_manager_ensuring_compliance_with_regulation.md"
+            },
+            {
+              "name": "BB_Data_spaces.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Data_spaces.md"
+            },
+            {
+              "name": "BB_Driver_authentication.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Driver_authentication.md"
+            },
+            {
+              "name": "BB_Driver_monitor.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Driver_monitor.md"
+            },
+            {
+              "name": "BB_End_to_end_security_for_C2X.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_End_to_end_security_for_C2X.md"
+            },
+            {
+              "name": "BB_Extended_accident_data_recorder.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Extended_accident_data_recorder.md"
+            },
+            {
+              "name": "BB_Monitoring_and_Tracing_of_specific_HW_in_vehicle.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Monitoring_and_Tracing_of_specific_HW_in_vehicle.md"
+            },
+            {
+              "name": "BB_Orchestration_support_for_energy_and_mobility_providers.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Orchestration_support_for_energy_and_mobility_providers.md"
+            },
+            {
+              "name": "BB_Secure_and_privacy_aware_voice_assistant.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Secure_and_privacy_aware_voice_assistant.md"
+            },
+            {
+              "name": "BB_Vehicle_data_streaming.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Vehicle_data_streaming.md"
+            },
+            {
+              "name": "BB_Vehicle_monitor.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\BB_Vehicle_monitor.md"
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-CSC-TC",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-CSC-TC",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-CSC-TC\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-EST",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-EST",
+          "children": [
+            {
+              "name": "Build-and-Implementation",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Build-and-Implementation"
+            },
+            {
+              "name": "Configuration-and-Calibration",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Configuration-and-Calibration",
+              "children": [
+                {
+                  "name": "BB_Offboard_Config_Tool_for_TSN.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-EST\\Configuration-and-Calibration\\BB_Offboard_Config_Tool_for_TSN.md"
+                }
+              ]
+            },
+            {
+              "name": "Deployment",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Deployment"
+            },
+            {
+              "name": "Design",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Design"
+            },
+            {
+              "name": "Implementation",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Implementation"
+            },
+            {
+              "name": "Lifecycle-Management",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Lifecycle-Management"
+            },
+            {
+              "name": "Monitoring-and-Diagnostics",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Monitoring-and-Diagnostics"
+            },
+            {
+              "name": "Requirements",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-EST\\Requirements",
+              "children": [
+                {
+                  "name": "BB_DocAsCode.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-EST\\Requirements\\BB_DocAsCode.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-EST\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-MU",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-MU",
+          "children": [
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-MU\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-SC",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-SC",
+          "children": [
+            {
+              "name": "1-HWLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-SC\\1-HWLayer",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-SC\\1-HWLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "2a-OSLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-SC\\2a-OSLayer",
+              "children": [
+                {
+                  "name": "Container",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\Container",
+                  "children": [
+                    {
+                      "name": "BB_Container_Abstraction.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\Container\\BB_Container_Abstraction.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Time",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\Time",
+                  "children": [
+                    {
+                      "name": "BB_Automotive_Edge_Runtime.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\Time\\BB_Automotive_Edge_Runtime.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Virtualization",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\Virtualization",
+                  "children": [
+                    {
+                      "name": "BB_SR_VOSS.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\Virtualization\\BB_SR_VOSS.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-SC\\2a-OSLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "2b-MWLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-SC\\2b-MWLayer",
+              "children": [
+                {
+                  "name": "Communication",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication",
+                  "children": [
+                    {
+                      "name": "RTPS-Types",
+                      "type": "directory",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\RTPS-Types",
+                      "children": [
+                        {
+                          "name": "cycloneDDS",
+                          "type": "directory",
+                          "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\cycloneDDS"
+                        },
+                        {
+                          "name": "embeddedRTPS",
+                          "type": "directory",
+                          "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\embeddedRTPS"
+                        },
+                        {
+                          "name": "FastDDS",
+                          "type": "directory",
+                          "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\FastDDS"
+                        },
+                        {
+                          "name": "OpenDDS",
+                          "type": "directory",
+                          "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\OpenDDS"
+                        },
+                        {
+                          "name": "RTPS-Types.md",
+                          "type": "file",
+                          "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\RTPS-Types\\RTPS-Types.md"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "BB_Communication_Protocol_Abstraction.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Communication_Protocol_Abstraction.md"
+                    },
+                    {
+                      "name": "BB_Communication_Server_S2S.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Communication_Server_S2S.md"
+                    },
+                    {
+                      "name": "BB_Gateway_Mirroring.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Gateway_Mirroring.md"
+                    },
+                    {
+                      "name": "BB_Network_Management.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Network_Management.md"
+                    },
+                    {
+                      "name": "BB_Onboard_TSN_configuration.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Onboard_TSN_configuration.md"
+                    },
+                    {
+                      "name": "BB_SecOS.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_SecOS.md"
+                    },
+                    {
+                      "name": "BB_Smart_Charging_Communication.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Smart_Charging_Communication.md"
+                    },
+                    {
+                      "name": "BB_Standard_Android_VHAL.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_Standard_Android_VHAL.md"
+                    },
+                    {
+                      "name": "BB_TSN.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Communication\\BB_TSN.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Configuration",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Configuration",
+                  "children": [
+                    {
+                      "name": "BB_Local_Update_Manager.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Configuration\\BB_Local_Update_Manager.md"
+                    },
+                    {
+                      "name": "BB_OTA_Master.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Configuration\\BB_OTA_Master.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Diagnostics",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Diagnostics",
+                  "children": [
+                    {
+                      "name": "BB_Policy_Manager.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Diagnostics\\BB_Policy_Manager.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Platform-Health-Management",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Platform-Health-Management",
+                  "children": [
+                    {
+                      "name": "BB_Distributed_Health_Management.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Platform-Health-Management\\BB_Distributed_Health_Management.md"
+                    },
+                    {
+                      "name": "BB_Watchdog.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Platform-Health-Management\\BB_Watchdog.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Power-Management",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Power-Management",
+                  "children": [
+                    {
+                      "name": "BB_Power_Management_Coordination.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Power-Management\\BB_Power_Management_Coordination.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Runtime",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Runtime",
+                  "children": [
+                    {
+                      "name": "BB_Diagnostic_Services_Applications.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Runtime\\BB_Diagnostic_Services_Applications.md"
+                    },
+                    {
+                      "name": "BB_State_Management.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Runtime\\BB_State_Management.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Security",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security",
+                  "children": [
+                    {
+                      "name": "BB_Anomaly_Detection.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Anomaly_Detection.md"
+                    },
+                    {
+                      "name": "BB_Crypto_Service_Manager.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Crypto_Service_Manager.md"
+                    },
+                    {
+                      "name": "BB_Internet_Protocol_Security.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Internet_Protocol_Security.md"
+                    },
+                    {
+                      "name": "BB_Intrusion_Detection.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Intrusion_Detection.md"
+                    },
+                    {
+                      "name": "BB_Safety_Gateway.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Safety_Gateway.md"
+                    },
+                    {
+                      "name": "BB_Secure_Onboard_Communication.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Secure_Onboard_Communication.md"
+                    },
+                    {
+                      "name": "BB_Security_and_Safety_API.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Security_and_Safety_API.md"
+                    },
+                    {
+                      "name": "BB_Security_Event_Manager.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Security_Event_Manager.md"
+                    },
+                    {
+                      "name": "BB_Security_Transport_Layer.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Security\\BB_Security_Transport_Layer.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Storage",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Storage",
+                  "children": [
+                    {
+                      "name": "BB_Vehicle_Data_Collector.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Storage\\BB_Vehicle_Data_Collector.md"
+                    },
+                    {
+                      "name": "BB_Vehicle_Data_Persistency.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Storage\\BB_Vehicle_Data_Persistency.md"
+                    },
+                    {
+                      "name": "BB_Vehicle_Logging_and_Recording.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Storage\\BB_Vehicle_Logging_and_Recording.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Time",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Time",
+                  "children": [
+                    {
+                      "name": "BB_Onboard_TSN_scheduling_Tool.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Time\\BB_Onboard_TSN_scheduling_Tool.md"
+                    },
+                    {
+                      "name": "BB_Time_Service.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Time\\BB_Time_Service.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Tools-and-Methods",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Tools-and-Methods",
+                  "children": [
+                    {
+                      "name": "BB_Key_Management_System.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\Tools-and-Methods\\BB_Key_Management_System.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-SC\\2b-MWLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "3-AppLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-SC\\3-AppLayer",
+              "children": [
+                {
+                  "name": "API",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\3-AppLayer\\API"
+                },
+                {
+                  "name": "Communication",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\3-AppLayer\\Communication",
+                  "children": [
+                    {
+                      "name": "BB_AOSP_Push_Notification_Service.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\3-AppLayer\\Communication\\BB_AOSP_Push_Notification_Service.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "Control",
+                  "type": "directory",
+                  "path": "WorkInProgress\\BB-SC\\3-AppLayer\\Control",
+                  "children": [
+                    {
+                      "name": "BB_ADAAA.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\BB-SC\\3-AppLayer\\Control\\BB_ADAAA.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-SC\\3-AppLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-SC\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "BB-SC-TC",
+          "type": "directory",
+          "path": "WorkInProgress\\BB-SC-TC",
+          "children": [
+            {
+              "name": "Build-and-Implementation",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-SC-TC\\Build-and-Implementation",
+              "children": [
+                {
+                  "name": "BB_LLM-EmpoweredEventChain-BasedFunctionalSafetyAnalysis.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-SC-TC\\Build-and-Implementation\\BB_LLM-EmpoweredEventChain-BasedFunctionalSafetyAnalysis.md"
+                }
+              ]
+            },
+            {
+              "name": "Testing",
+              "type": "directory",
+              "path": "WorkInProgress\\BB-SC-TC\\Testing",
+              "children": [
+                {
+                  "name": "BB_Shadowing.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\BB-SC-TC\\Testing\\BB_Shadowing.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\BB-SC-TC\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "S-BB",
+          "type": "directory",
+          "path": "WorkInProgress\\S-BB",
+          "children": [
+            {
+              "name": "1-HWLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\S-BB\\1-HWLayer",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\1-HWLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "2a-OSLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\S-BB\\2a-OSLayer",
+              "children": [
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2a-OSLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "2b-MWLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\S-BB\\2b-MWLayer",
+              "children": [
+                {
+                  "name": "BB_Legally_binding_formats_for_data_exchange.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Legally_binding_formats_for_data_exchange.md"
+                },
+                {
+                  "name": "BB_SOA.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_SOA.md"
+                },
+                {
+                  "name": "BB_sSOA.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_sSOA.md"
+                },
+                {
+                  "name": "BB_Standardized_authentication_of_vehicle_users.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_authentication_of_vehicle_users.md"
+                },
+                {
+                  "name": "BB_Standardized_cloud_services_to_support_international_roaming_of_vehicles.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_cloud_services_to_support_international_roaming_of_vehicles.md"
+                },
+                {
+                  "name": "BB_Standardized_Data_Conversion_Tools_for_Info_Knowledge_Layers.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_Data_Conversion_Tools_for_Info_Knowledge_Layers.md"
+                },
+                {
+                  "name": "BB_Standardized_Data_Description_for_Vehicle_Sensors_Attributes_Actuators.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_Data_Description_for_Vehicle_Sensors_Attributes_Actuators.md"
+                },
+                {
+                  "name": "BB_Standardized_data_formats_for_digital_twins.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_data_formats_for_digital_twins.md"
+                },
+                {
+                  "name": "BB_Standardized_HD_maps_formats.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_HD_maps_formats.md"
+                },
+                {
+                  "name": "BB_Standardized_way_for_Reasoning_on_Data_Streams.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\BB_Standardized_way_for_Reasoning_on_Data_Streams.md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\2b-MWLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "3-AppLayer",
+              "type": "directory",
+              "path": "WorkInProgress\\S-BB\\3-AppLayer",
+              "children": [
+                {
+                  "name": "API",
+                  "type": "directory",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\API",
+                  "children": [
+                    {
+                      "name": "BB_VAPI_Stack_Demonstrator.md",
+                      "type": "file",
+                      "path": "WorkInProgress\\S-BB\\3-AppLayer\\API\\BB_VAPI_Stack_Demonstrator.md"
+                    }
+                  ]
+                },
+                {
+                  "name": "BB_Fleet_Management_System.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\BB_Fleet_Management_System.md"
+                },
+                {
+                  "name": "BB_Standardization_of_Vehicle_API.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\BB_Standardization_of_Vehicle_API.md"
+                },
+                {
+                  "name": "BB_Standardized_Architectural_Patterns_for_Cross_Platform_Data_Service_Infrastructure.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\BB_Standardized_Architectural_Patterns_for_Cross_Platform_Data_Service_Infrastructure.md"
+                },
+                {
+                  "name": "BB_Standardized_Description_of_Data_from_Related_Domains.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\BB_Standardized_Description_of_Data_from_Related_Domains.md"
+                },
+                {
+                  "name": "BB_Standardized_Procedure_and_Tooling_for_Combining_Data_from_Different_Domains.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\BB_Standardized_Procedure_and_Tooling_for_Combining_Data_from_Different_Domains.md"
+                },
+                {
+                  "name": "BB_Standardized_Procedure_and_Tooling_for_Modelling_Data_from_Different_Domains.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\BB_Standardized_Procedure_and_Tooling_for_Modelling_Data_from_Different_Domains.md"
+                },
+                {
+                  "name": "README.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\S-BB\\3-AppLayer\\README.md"
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "WorkInProgress\\S-BB\\README.md"
+            }
+          ]
+        },
+        {
+          "name": "UseCases",
+          "type": "directory",
+          "path": "WorkInProgress\\UseCases",
+          "children": [
+            {
+              "name": "Scenarios",
+              "type": "directory",
+              "path": "WorkInProgress\\UseCases\\Scenarios",
+              "children": [
+                {
+                  "name": "BB_Central_database_of_vehicle_failures_and_incidents.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Central_database_of_vehicle_failures_and_incidents.md"
+                },
+                {
+                  "name": "BB_Central_traffic_manager.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Central_traffic_manager.md"
+                },
+                {
+                  "name": "BB_Collect_street_data.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Collect_street_data.md"
+                },
+                {
+                  "name": "BB_Location_based_services.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Location_based_services.md"
+                },
+                {
+                  "name": "BB_Offloading_tasks_to_cloud_resources.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Offloading_tasks_to_cloud_resources.md"
+                },
+                {
+                  "name": "BB_Remote_driving.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Remote_driving.md"
+                },
+                {
+                  "name": "BB_Remote_Vehicle_Interaction.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Remote_Vehicle_Interaction.md"
+                },
+                {
+                  "name": "BB_Universal_Service_Mesh.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Universal_Service_Mesh.md"
+                },
+                {
+                  "name": "BB_Vehicle_FleetData.md",
+                  "type": "file",
+                  "path": "WorkInProgress\\UseCases\\Scenarios\\BB_Vehicle_FleetData.md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md"
+    }
+  ]
+}
