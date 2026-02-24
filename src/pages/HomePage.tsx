@@ -11,11 +11,26 @@ const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
 
 const normalizePath = (path: string): string => path.replace(/\\/g, "/");
 
+const BB_TAG_FULL_NAMES: Record<string, string> = {
+  FC: "Functional Cluster (Logical group of technically similar BBs)",
+  "BB-SC": "Building Block Stack Component (In-Vehicle / On-Board)",
+  "BB-CSC": "Building Block Cloud Stack Component (Cloud / Off-Board)",
+  "BB-MU": "Building Block Mockup Unit (In-Vehicle / On-Board Component)",
+  "BB-CMU": "Building Block Cloud Mockup Unit (Cloud / Off-Board Component)",
+  "BB-EST": "Building Block Engineering & Support Tools (for In-Vehicle / On-Board Components)",
+  "BB-CEST": "Building Block Cloud Engineering & Support Tools (for Cloud / Off-Board Components)",
+  "BB-SC-TC": "Building Block Stack Component ToolChain (contains compatible set of Engineering & Support Tools and Mockup Units for In-Vehicle dev)",
+  "BB-CSC-TC": "Building Block Cloud Stack Component ToolChain ToolChain (contains compatible set of Engineering & Support Tools and Mockup Units for Cloud dev)",
+  "S-BB": "Supporting Building Blocks (Standards, API & Interface Definitions, standardized Data Model)",
+  "BB-WE": "Whatever Tag / Whitecard",
+};
+
 const toBBNode = (node: BuildingBlockNode): BBNode => {
   const normalizedPath = normalizePath(node.path);
   return {
     id: normalizedPath || node.name,
     name: node.name,
+    fullName: BB_TAG_FULL_NAMES[node.name],
     path: normalizedPath,
     type: toRepoEntryType(node.type),
     children: node.children?.map(toBBNode),
