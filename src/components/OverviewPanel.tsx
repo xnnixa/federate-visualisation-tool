@@ -3,6 +3,7 @@ import type { BBNode } from "../types/bb";
 interface OverviewPanelProps {
   root: BBNode;
   onSelect: (node: BBNode) => void;
+  selectedId?: string;
 }
 
 const countDescendants = (node: BBNode): number => {
@@ -12,9 +13,9 @@ const countDescendants = (node: BBNode): number => {
   return node.children.reduce((sum, child) => sum + 1 + countDescendants(child), 0);
 };
 
-export const OverviewPanel = ({ root, onSelect }: OverviewPanelProps) => {
+export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps) => {
   const sections = (root.children ?? [])
-    .filter((section) => section.type === "tree")
+    .filter((section) => section.type === "tree" || section.name.endsWith(".md"))
     .filter((section) => !section.name.startsWith("."));
   const formatOverviewName = (fullName?: string) => {
     if (!fullName) {
@@ -31,18 +32,22 @@ export const OverviewPanel = ({ root, onSelect }: OverviewPanelProps) => {
     <div className="overview-grid">
       {sections.map((section) => {
         const overviewName = formatOverviewName(section.fullName);
+        const isSelected = selectedId === section.id;
+        const isMarkdownFile = section.name.endsWith(".md");
         return (
           <button
             key={section.id}
             type="button"
-            className="overview-card"
+            className={`overview-card ${isSelected ? "is-selected" : ""}`}
             onClick={() => onSelect(section)}
           >
             <div className="overview-card__title">{section.name}</div>
             {overviewName && <div className="overview-card__subtitle">{overviewName}</div>}
-            <div className="overview-card__meta">
-              {section.children?.length ?? 0} top items · {countDescendants(section)} total entries
-            </div>
+            {!isMarkdownFile && (
+              <div className="overview-card__meta">
+                {section.children?.length ?? 0} top items · {countDescendants(section)} total entries
+              </div>
+            )}
           </button>
         );
       })}
