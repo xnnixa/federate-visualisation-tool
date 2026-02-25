@@ -48,6 +48,7 @@ const buildGraphFromRoot = (root: BBNode): BBGraph => {
 export const HomePage = () => {
   const [graph, setGraph] = useState<BBGraph | null>(null);
   const [selected, setSelected] = useState<BBNode | undefined>();
+  const [selectedChild, setSelectedChild] = useState<BBNode | undefined>();
   const [filter, setFilter] = useState("");
   const [view, setView] = useState<"overview" | "tree">("overview");
   const [pendingTreeJump, setPendingTreeJump] = useState(false);
@@ -58,8 +59,15 @@ export const HomePage = () => {
     []
   );
   const handleOverviewSelect = (node: BBNode) => {
+    console.log("Selected node from overview:", node);
     setSelected(node);
+    setSelectedChild(undefined); // Reset child selection when parent changes
     setPendingTreeJump(true);
+  };
+
+  const handleSubtreeSelect = (node: BBNode) => {
+    console.log("Selected child node from subtree:", node);
+    setSelectedChild(node);
   };
   const handleEnterTree = () => {
     setView("tree");
@@ -112,6 +120,54 @@ export const HomePage = () => {
     return <div className="state">No data available.</div>;
   }
 
+  const mainBlockView = () => {
+    return (
+        <>
+          <section className="tree-panel">
+            {view === "overview" ? (
+                <OverviewPanel root={graph.root} onSelect={handleOverviewSelect}/>
+            ) : (
+                <TreeView
+                    root={graph.root}
+                    filter={filter}
+                    onSelect={setSelected}
+                    selectedId={selected?.id}
+                    expandedIds={expandedIds}/>
+            )}
+          </section>
+          <aside className="detail-panel-wrapper">
+            <DetailPanel node={selected} meta={meta}/>
+          </aside>
+        </>
+    )
+  }
+
+  const subBlockView = () => {
+    if (view === "overview") {
+    return (
+        <>
+        <section className="tree-panel">
+          {selected?.children && selected.children.length > 0 ? (
+              <div className="subtree-content">
+                <h3 className="subtree-title">Subitem of {selected.name}</h3>
+                    <OverviewPanel root={selected} onSelect={handleSubtreeSelect} />
+              </div>
+          ) : (
+              <div className="subtree-empty">
+                {selected
+                    ? "No children available for this item."
+                    : "Select an item to view its children."}
+              </div>
+          )}
+        </section>
+          <aside className="detail-panel-wrapper">
+            <DetailPanel node={selectedChild} meta={meta}/>
+          </aside>
+        </>
+    )
+    }
+  }
+
   return (
     <div className="layout">
       <header className="header">
@@ -157,22 +213,8 @@ export const HomePage = () => {
         </div>
       )}
       <main className="main">
-        <section className="tree-panel">
-          {view === "overview" ? (
-            <OverviewPanel root={graph.root} onSelect={handleOverviewSelect} />
-          ) : (
-            <TreeView
-              root={graph.root}
-              filter={filter}
-              onSelect={setSelected}
-              selectedId={selected?.id}
-              expandedIds={expandedIds}
-            />
-          )}
-        </section>
-        <aside className="detail-panel-wrapper">
-          <DetailPanel node={selected} meta={meta} />
-        </aside>
+        {mainBlockView()}
+        {subBlockView()}
       </main>
     </div>
   );
