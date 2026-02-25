@@ -201,15 +201,15 @@ export const HomePage = () => {
                 <button
                   type="button"
                   className="breadcrumbs__item"
-                  onClick={() => handleBreadcrumbClick(index)}
+                  onClick={() => handleBreadcrumbClick(index-1)}
                 >
                   {node.name}
                 </button>
               </span>
             ))}
-            <span className="breadcrumbs__separator">/</span>
           </>
         ) : null}
+        {navigationStack.length > 0 && <span className="breadcrumbs__separator">/</span>}
         <span className="breadcrumbs__current">{currentRoot.name}</span>
       </nav>
     );
