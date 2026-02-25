@@ -10,8 +10,10 @@ export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
     const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
   if (!node) {
     return (
-      <div className="detail-panel__empty">
-        Select a Building Block folder or file to view details.
+      <div className="detail-panel">
+        <div className="detail-panel__empty">
+          Select a Building Block folder or file to view details.
+        </div>
       </div>
     );
   }

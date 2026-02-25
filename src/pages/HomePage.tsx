@@ -48,39 +48,50 @@ const buildGraphFromRoot = (root: BBNode): BBGraph => {
 export const HomePage = () => {
   const [graph, setGraph] = useState<BBGraph | null>(null);
   const [selected, setSelected] = useState<BBNode | undefined>();
-  const [selectedChild, setSelectedChild] = useState<BBNode | undefined>();
+  const [navigationStack, setNavigationStack] = useState<BBNode[]>([]);
+  const [currentRoot, setCurrentRoot] = useState<BBNode | null>(null);
   const [filter, setFilter] = useState("");
   const [view, setView] = useState<"overview" | "tree">("overview");
-  const [pendingTreeJump, setPendingTreeJump] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const meta: RepoMeta = useMemo(
     () => ({ owner: "", repo: "", branch: "main", baseUrl: "" }),
     []
   );
+
   const handleOverviewSelect = (node: BBNode) => {
-    setSelected(node);
-    setSelectedChild(undefined); // Reset child selection when parent changes
-    setPendingTreeJump(true);
+    // Navigate into the node if it has children
+    if (node.children && node.children.length > 0) {
+      setNavigationStack((prev) => [...prev, currentRoot!]);
+      setCurrentRoot(node);
+      setSelected(node); // Keep the folder selected to show its details
+    } else {
+      // Just select the node if it has no children
+      setSelected(node);
+    }
   };
 
-  const handleSubtreeSelect = (node: BBNode) => {
-    console.log("Selected child node from subtree:", node);
-    setSelectedChild(node);
+  const handleBreadcrumbClick = (index: number) => {
+    if (index === -1) {
+      // Go back to the root
+      setCurrentRoot(graph?.root || null);
+      setNavigationStack([]);
+    } else {
+      // Go back to a specific level
+      const targetNode = navigationStack[index];
+      setCurrentRoot(targetNode);
+      setNavigationStack((prev) => prev.slice(0, index));
+    }
+    setSelected(undefined);
+    setFilter("");
   };
 
   const handleViewInTree = (node: BBNode) => {
     setSelected(node);
     setView("tree");
-    setPendingTreeJump(false);
     setFilter("");
   };
 
-  const handleEnterTree = () => {
-    setView("tree");
-    setPendingTreeJump(false);
-    setFilter("");
-  };
   const expandedIds = useMemo(() => {
     if (!selected?.path) {
       return new Set<string>();
@@ -104,7 +115,9 @@ export const HomePage = () => {
         }
 
         const root = toBBNode(localRoot, bbTagFullNames);
-        setGraph(buildGraphFromRoot(root));
+        const builtGraph = buildGraphFromRoot(root);
+        setGraph(builtGraph);
+        setCurrentRoot(builtGraph.root);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Unexpected error");
       } finally {
@@ -123,59 +136,41 @@ export const HomePage = () => {
     return <div className="state state--error">Failed to load data. {error}</div>;
   }
 
-  if (!graph) {
+  if (!graph || !currentRoot) {
     return <div className="state">No data available.</div>;
   }
 
-  const mainBlockView = () => {
+  const renderBreadcrumbs = () => {
     return (
-        <>
-          <section className="tree-panel">
-            {view === "overview" ? (
-                <><h3 className="subtree-title">Main Blocks</h3>
-                  <OverviewPanel root={graph.root} onSelect={handleOverviewSelect} selectedId={selected?.id}/>
-                </>
-            ) : (
-                <TreeView
-                    root={graph.root}
-                    filter={filter}
-                    onSelect={setSelected}
-                    selectedId={selected?.id}
-                    expandedIds={expandedIds}/>
-            )}
-          </section>
-          <aside className="detail-panel-wrapper">
-            <DetailPanel node={selected} meta={meta} onViewInTree={handleViewInTree}/>
-          </aside>
-        </>
-    )
-  }
-
-  const subBlockView = () => {
-    if (view === "overview") {
-    return (
-        <>
-        <section className="tree-panel">
-          {selected?.children && selected.children.length > 0 ? (
-              <div className="subtree-content">
-                <h3 className="subtree-title">Blocks in {selected.name}</h3>
-                    <OverviewPanel root={selected} onSelect={handleSubtreeSelect} selectedId={selectedChild?.id} />
-              </div>
-          ) : (
-              <div className="subtree-empty">
-                {selected
-                    ? "No children available for this item."
-                    : "Select an item to view its children."}
-              </div>
-          )}
-        </section>
-          <aside className="detail-panel-wrapper">
-            <DetailPanel node={selectedChild} meta={meta} onViewInTree={handleViewInTree}/>
-          </aside>
-        </>
-    )
-    }
-  }
+      <nav className="breadcrumbs">
+        {navigationStack.length > 0 ? (
+          <>
+            <button
+              type="button"
+              className="breadcrumbs__item"
+              onClick={() => handleBreadcrumbClick(-1)}
+            >
+              Root
+            </button>
+            {navigationStack.map((node, index) => (
+              <span key={node.id}>
+                <span className="breadcrumbs__separator">/</span>
+                <button
+                  type="button"
+                  className="breadcrumbs__item"
+                  onClick={() => handleBreadcrumbClick(index)}
+                >
+                  {node.name}
+                </button>
+              </span>
+            ))}
+            <span className="breadcrumbs__separator">/</span>
+          </>
+        ) : null}
+        <span className="breadcrumbs__current">{currentRoot.name}</span>
+      </nav>
+    );
+  };
 
   return (
     <div className="layout">
@@ -189,29 +184,18 @@ export const HomePage = () => {
             <button
               type="button"
               className={`view-toggle__button ${view === "overview" ? "is-active" : ""}`}
-              onClick={() => {
-                setView("overview");
-                setPendingTreeJump(false);
-              }}
+              onClick={() => setView("overview")}
             >
               Overview
             </button>
             <button
               type="button"
               className={`view-toggle__button ${view === "tree" ? "is-active" : ""}`}
-              onClick={() => {
-                setView("tree");
-                setPendingTreeJump(false);
-              }}
+              onClick={() => setView("tree")}
             >
               Tree
             </button>
           </div>
-          {view === "overview" && pendingTreeJump && (
-            <button type="button" className="view-toggle__button is-active" onClick={handleEnterTree}>
-              Enter Tree
-            </button>
-          )}
           <SearchBar value={filter} onChange={setFilter} />
         </div>
       </header>
@@ -221,9 +205,31 @@ export const HomePage = () => {
           <code>VITE_GITHUB_TOKEN</code> to load the full repository tree.
         </div>
       )}
+      {renderBreadcrumbs()}
       <main className="main">
-        {mainBlockView()}
-        {subBlockView()}
+        <section className="tree-panel">
+          {view === "overview" ? (
+            <>
+              <h3 className="subtree-title">{currentRoot.name}</h3>
+              <OverviewPanel
+                root={currentRoot}
+                onSelect={handleOverviewSelect}
+                selectedId={selected?.id}
+              />
+            </>
+          ) : (
+            <TreeView
+              root={currentRoot}
+              filter={filter}
+              onSelect={setSelected}
+              selectedId={selected?.id}
+              expandedIds={expandedIds}
+            />
+          )}
+        </section>
+        <aside className="detail-panel-wrapper">
+          <DetailPanel node={selected} meta={meta} onViewInTree={handleViewInTree}/>
+        </aside>
       </main>
     </div>
   );
