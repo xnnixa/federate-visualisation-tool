@@ -68,6 +68,14 @@ export const HomePage = () => {
     console.log("Selected child node from subtree:", node);
     setSelectedChild(node);
   };
+
+  const handleViewInTree = (node: BBNode) => {
+    setSelected(node);
+    setView("tree");
+    setPendingTreeJump(false);
+    setFilter("");
+  };
+
   const handleEnterTree = () => {
     setView("tree");
     setPendingTreeJump(false);
@@ -137,7 +145,7 @@ export const HomePage = () => {
             )}
           </section>
           <aside className="detail-panel-wrapper">
-            <DetailPanel node={selected} meta={meta}/>
+            <DetailPanel node={selected} meta={meta} onViewInTree={handleViewInTree}/>
           </aside>
         </>
     )
@@ -150,7 +158,7 @@ export const HomePage = () => {
         <section className="tree-panel">
           {selected?.children && selected.children.length > 0 ? (
               <div className="subtree-content">
-                <h3 className="subtree-title">Children of {selected.name}</h3>
+                <h3 className="subtree-title">Blocks in {selected.name}</h3>
                     <OverviewPanel root={selected} onSelect={handleSubtreeSelect} selectedId={selectedChild?.id} />
               </div>
           ) : (
@@ -162,7 +170,7 @@ export const HomePage = () => {
           )}
         </section>
           <aside className="detail-panel-wrapper">
-            <DetailPanel node={selectedChild} meta={meta}/>
+            <DetailPanel node={selectedChild} meta={meta} onViewInTree={handleViewInTree}/>
           </aside>
         </>
     )

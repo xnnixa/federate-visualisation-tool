@@ -3,9 +3,10 @@ import type { BBNode, RepoMeta } from "../types/bb";
 interface DetailPanelProps {
   node?: BBNode;
   meta: RepoMeta;
+  onViewInTree?: (node: BBNode) => void;
 }
 
-export const DetailPanel = ({ node, meta }: DetailPanelProps) => {
+export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
     const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
   if (!node) {
     return (
@@ -42,9 +43,16 @@ export const DetailPanel = ({ node, meta }: DetailPanelProps) => {
         </div>
       </div>
       {snippet && <pre className="detail-panel__snippet">{snippet}</pre>}
-      <a href={link} target="_blank" rel="noreferrer">
-        View on GitHub
-      </a>
+      <div className="detail-panel__actions">
+        {onViewInTree && (
+          <button type="button" className="detail-panel__button" onClick={() => onViewInTree(node)}>
+            View in tree view
+          </button>
+        )}
+        <a href={link} target="_blank" rel="noreferrer" className="detail-panel__button detail-panel__button--secondary">
+          View on GitHub
+        </a>
+      </div>
     </div>
   );
 };
