@@ -59,7 +59,6 @@ export const HomePage = () => {
     []
   );
   const handleOverviewSelect = (node: BBNode) => {
-    console.log("Selected node from overview:", node);
     setSelected(node);
     setSelectedChild(undefined); // Reset child selection when parent changes
     setPendingTreeJump(true);
@@ -125,7 +124,9 @@ export const HomePage = () => {
         <>
           <section className="tree-panel">
             {view === "overview" ? (
-                <OverviewPanel root={graph.root} onSelect={handleOverviewSelect}/>
+                <><h3 className="subtree-title">Main Blocks</h3>
+                  <OverviewPanel root={graph.root} onSelect={handleOverviewSelect} selectedId={selected?.id}/>
+                </>
             ) : (
                 <TreeView
                     root={graph.root}
@@ -149,8 +150,8 @@ export const HomePage = () => {
         <section className="tree-panel">
           {selected?.children && selected.children.length > 0 ? (
               <div className="subtree-content">
-                <h3 className="subtree-title">Subitem of {selected.name}</h3>
-                    <OverviewPanel root={selected} onSelect={handleSubtreeSelect} />
+                <h3 className="subtree-title">Children of {selected.name}</h3>
+                    <OverviewPanel root={selected} onSelect={handleSubtreeSelect} selectedId={selectedChild?.id} />
               </div>
           ) : (
               <div className="subtree-empty">
