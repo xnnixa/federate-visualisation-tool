@@ -15,7 +15,7 @@ const countDescendants = (node: BBNode): number => {
 
 export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps) => {
   const sections = (root.children ?? [])
-    .filter((section) => section.type === "tree")
+    .filter((section) => section.type === "tree" || section.name.endsWith(".md"))
     .filter((section) => !section.name.startsWith("."));
   const formatOverviewName = (fullName?: string) => {
     if (!fullName) {
@@ -33,6 +33,7 @@ export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps
       {sections.map((section) => {
         const overviewName = formatOverviewName(section.fullName);
         const isSelected = selectedId === section.id;
+        const isMarkdownFile = section.name.endsWith(".md");
         return (
           <button
             key={section.id}
@@ -42,9 +43,11 @@ export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps
           >
             <div className="overview-card__title">{section.name}</div>
             {overviewName && <div className="overview-card__subtitle">{overviewName}</div>}
-            <div className="overview-card__meta">
-              {section.children?.length ?? 0} top items · {countDescendants(section)} total entries
-            </div>
+            {!isMarkdownFile && (
+              <div className="overview-card__meta">
+                {section.children?.length ?? 0} top items · {countDescendants(section)} total entries
+              </div>
+            )}
           </button>
         );
       })}
