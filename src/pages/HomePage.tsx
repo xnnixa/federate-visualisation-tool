@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { DetailPanel } from "../components/DetailPanel";
 import { OverviewPanel } from "../components/OverviewPanel";
 import { SearchBar } from "../components/SearchBar";
@@ -45,11 +46,21 @@ const buildGraphFromRoot = (root: BBNode): BBGraph => {
   return { nodes, edges, root, fallbackUsed: false };
 };
 
+const getPathSegments = (pathname: string): string[] => {
+  if (pathname === "/" || pathname === "") {
+    return [];
+  }
+  return pathname
+    .split("/")
+    .filter(Boolean)
+    .map(decodeURIComponent);
+};
+
 export const HomePage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [graph, setGraph] = useState<BBGraph | null>(null);
   const [selected, setSelected] = useState<BBNode | undefined>();
-  const [navigationStack, setNavigationStack] = useState<BBNode[]>([]);
-  const [currentRoot, setCurrentRoot] = useState<BBNode | null>(null);
   const [filter, setFilter] = useState("");
   const [view, setView] = useState<"overview" | "tree">("overview");
   const [error, setError] = useState<string | null>(null);
@@ -59,11 +70,43 @@ export const HomePage = () => {
     []
   );
 
+  // Derive currentRoot and navigationStack from the URL
+  const pathSegments = useMemo(() => getPathSegments(location.pathname), [location.pathname]);
+
+  const { currentRoot, navigationStack } = useMemo(() => {
+    if (!graph) {
+      return { currentRoot: null, navigationStack: [] };
+    }
+
+    const stack: BBNode[] = [];
+    let current = graph.root;
+
+    for (const segment of pathSegments) {
+      if (current.children) {
+        const found = current.children.find((child) => child.name === segment);
+        if (found) {
+          stack.push(current);
+          current = found;
+        } else {
+          // Path doesn't exist, return to root
+          return { currentRoot: graph.root, navigationStack: [] };
+        }
+      } else {
+        // Current node has no children, can't navigate further
+        return { currentRoot: current, navigationStack: stack };
+      }
+    }
+
+    return { currentRoot: current, navigationStack: stack };
+  }, [graph, pathSegments]);
+
   const handleOverviewSelect = (node: BBNode) => {
     // Navigate into the node if it has children
     if (node.children && node.children.length > 0) {
-      setNavigationStack((prev) => [...prev, currentRoot!]);
-      setCurrentRoot(node);
+      const newPath = [...pathSegments, node.name]
+        .map(encodeURIComponent)
+        .join("/");
+      navigate(`/${newPath}`);
       setSelected(node); // Keep the folder selected to show its details
     } else {
       // Just select the node if it has no children
@@ -74,13 +117,14 @@ export const HomePage = () => {
   const handleBreadcrumbClick = (index: number) => {
     if (index === -1) {
       // Go back to the root
-      setCurrentRoot(graph?.root || null);
-      setNavigationStack([]);
+      navigate("/");
     } else {
       // Go back to a specific level
-      const targetNode = navigationStack[index];
-      setCurrentRoot(targetNode);
-      setNavigationStack((prev) => prev.slice(0, index));
+      const newPath = pathSegments
+        .slice(0, index + 1)
+        .map(encodeURIComponent)
+        .join("/");
+      navigate(`/${newPath}`);
     }
     setSelected(undefined);
     setFilter("");
@@ -117,7 +161,6 @@ export const HomePage = () => {
         const root = toBBNode(localRoot, bbTagFullNames);
         const builtGraph = buildGraphFromRoot(root);
         setGraph(builtGraph);
-        setCurrentRoot(builtGraph.root);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Unexpected error");
       } finally {
