@@ -4,21 +4,30 @@ import { OverviewPanel } from "../components/OverviewPanel";
 import { SearchBar } from "../components/SearchBar";
 import { TreeView } from "../components/TreeView";
 import type { BBGraph, BBNode, RepoMeta } from "../types/bb";
-import { getBuildingBlocks, type BuildingBlockNode } from "../lib/parser";
+import {
+  fetchBBTags,
+  getBuildingBlocks,
+  type BuildingBlockNode,
+} from "../lib/parser";
 
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
 
 const normalizePath = (path: string): string => path.replace(/\\/g, "/");
 
-const toBBNode = (node: BuildingBlockNode): BBNode => {
+
+const toBBNode = (
+  node: BuildingBlockNode,
+  bbTagFullNames: Record<string, string>
+): BBNode => {
   const normalizedPath = normalizePath(node.path);
   return {
     id: normalizedPath || node.name,
     name: node.name,
+    fullName: bbTagFullNames[node.name],
     path: normalizedPath,
     type: toRepoEntryType(node.type),
-    children: node.children?.map(toBBNode),
+    children: node.children?.map((child) => toBBNode(child, bbTagFullNames)),
   };
 };
 
@@ -67,15 +76,28 @@ export const HomePage = () => {
   }, [selected?.path]);
 
   useEffect(() => {
-    try {
-      setLoading(true);
-      const root = toBBNode(getBuildingBlocks());
-      setGraph(buildGraphFromRoot(root));
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Unexpected error");
-    } finally {
-      setLoading(false);
-    }
+    const load = async () => {
+      try {
+        setLoading(true);
+        const localRoot = getBuildingBlocks();
+        let bbTagFullNames: Record<string, string> = {};
+
+        try {
+          bbTagFullNames = await fetchBBTags();
+        } catch {
+          bbTagFullNames = {};
+        }
+
+        const root = toBBNode(localRoot, bbTagFullNames);
+        setGraph(buildGraphFromRoot(root));
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Unexpected error");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    void load();
   }, []);
 
   if (loading) {
