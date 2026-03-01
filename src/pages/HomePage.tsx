@@ -14,7 +14,7 @@ import {
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
 
-const normalizePath = (path: string): string => path.replace(/\\/g, "/");
+const normalizePath = (path: string): string => path.replaceAll('\\', "/");
 
 
 const toBBNode = (
@@ -223,7 +223,7 @@ export const HomePage = () => {
           <p>Clickable overview of the FEDERATE Building Block landscape.</p>
         </div>
         <div className="header__actions">
-          <div className="view-toggle" role="group" aria-label="View mode">
+          <div className="view-toggle" aria-label="View mode">
             <button
               type="button"
               className={`view-toggle__button ${view === "overview" ? "is-active" : ""}`}
