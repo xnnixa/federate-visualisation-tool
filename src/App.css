@@ -226,6 +226,9 @@
   display: inline-flex;
   justify-content: center;
   color: #5d6f3f;
+  border: none;
+  border-radius: 50%;
+  background: none;
 }
 
 .tree-node__folder {

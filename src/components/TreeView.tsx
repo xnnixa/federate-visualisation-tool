@@ -65,7 +65,7 @@ const NodeRow = ({
         data-node-id={node.id}
       >
         {hasChildren ? (
-          <span
+          <button
             className="tree-node__toggle"
             onClick={(event) => {
               event.stopPropagation();
@@ -74,7 +74,7 @@ const NodeRow = ({
             aria-label={expanded ? "Collapse" : "Expand"}
           >
             {expanded ? "▾" : "▸"}
-          </span>
+          </button>
         ) : (
           <span className="tree-node__toggle" />
         )}
