@@ -2,6 +2,7 @@ import type { BBNode } from "../types/bb";
 
 interface OverviewPanelProps {
   root: BBNode;
+  filter: string;
   onSelect: (node: BBNode) => void;
   selectedId?: string;
 }
@@ -10,22 +11,37 @@ const countDescendants = (node: BBNode): number => {
   if (!node.children || node.children.length === 0) {
     return 0;
   }
-  return node.children.reduce((sum, child) => sum + 1 + countDescendants(child), 0);
+
+  return node.children.reduce(
+    (sum, child) => sum + 1 + countDescendants(child),
+    0,
+  );
 };
 
-export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps) => {
+export const OverviewPanel = ({
+  root,
+  filter,
+  onSelect,
+  selectedId,
+}: OverviewPanelProps) => {
+  const normalizedFilter = filter.trim().toLowerCase();
+
   const sections = (root.children ?? [])
     .filter((section) => section.type === "tree" || section.type === "blob")
-    .filter((section) => !section.name.startsWith("."));
+    .filter((section) => !section.name.startsWith("."))
+    .filter((section) =>
+      normalizedFilter
+        ? section.name.toLowerCase().includes(normalizedFilter)
+        : true,
+    );
+
   const formatOverviewName = (fullName?: string) => {
-    if (!fullName) {
-      return undefined;
-    }
+    if (!fullName) return undefined;
     return fullName.replace(/\s*\(.*\)\s*$/, "").trim();
   };
 
   if (sections.length === 0) {
-    return <div className="overview-empty">No sections available.</div>;
+    return <div className="overview-empty">No matching sections.</div>;
   }
 
   return (
@@ -34,6 +50,7 @@ export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps
         const overviewName = formatOverviewName(section.fullName);
         const isSelected = selectedId === section.id;
         const isFile = section.type === "blob";
+
         return (
           <button
             key={section.id}
@@ -42,10 +59,15 @@ export const OverviewPanel = ({ root, onSelect, selectedId }: OverviewPanelProps
             onClick={() => onSelect(section)}
           >
             <div className="overview-card__title">{section.name}</div>
-            {overviewName && <div className="overview-card__subtitle">{overviewName}</div>}
+
+            {overviewName && (
+              <div className="overview-card__subtitle">{overviewName}</div>
+            )}
+
             {!isFile && (
               <div className="overview-card__meta">
-                {section.children?.length ?? 0} top items · {countDescendants(section)} total entries
+                {section.children?.length ?? 0} top items ·{" "}
+                {countDescendants(section)} total entries
               </div>
             )}
           </button>

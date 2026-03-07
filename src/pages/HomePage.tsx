@@ -14,12 +14,11 @@ import {
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
 
-const normalizePath = (path: string): string => path.replaceAll('\\', "/");
-
+const normalizePath = (path: string): string => path.replaceAll("\\", "/");
 
 const toBBNode = (
   node: BuildingBlockNode,
-  bbTagFullNames: Record<string, string>
+  bbTagFullNames: Record<string, string>,
 ): BBNode => {
   const normalizedPath = normalizePath(node.path);
   return {
@@ -35,6 +34,7 @@ const toBBNode = (
 const buildGraphFromRoot = (root: BBNode): BBGraph => {
   const nodes: BBNode[] = [];
   const edges: BBGraph["edges"] = [];
+
   const visit = (node: BBNode) => {
     nodes.push(node);
     node.children?.forEach((child) => {
@@ -42,6 +42,7 @@ const buildGraphFromRoot = (root: BBNode): BBGraph => {
       visit(child);
     });
   };
+
   visit(root);
   return { nodes, edges, root, fallbackUsed: false };
 };
@@ -50,10 +51,35 @@ const getPathSegments = (pathname: string): string[] => {
   if (pathname === "/" || pathname === "") {
     return [];
   }
-  return pathname
-    .split("/")
-    .filter(Boolean)
-    .map(decodeURIComponent);
+  return pathname.split("/").filter(Boolean).map(decodeURIComponent);
+};
+
+const collectExpandedIdsForFilter = (
+  node: BBNode,
+  filter: string,
+): Set<string> => {
+  const normalizedFilter = filter.trim().toLowerCase();
+
+  if (!normalizedFilter) {
+    return new Set<string>();
+  }
+
+  const expanded = new Set<string>();
+
+  const visit = (current: BBNode, ancestors: string[]) => {
+    const selfMatches = current.name.toLowerCase().includes(normalizedFilter);
+
+    if (selfMatches) {
+      ancestors.forEach((ancestorId) => expanded.add(ancestorId));
+    }
+
+    current.children?.forEach((child) => {
+      visit(child, [...ancestors, current.id]);
+    });
+  };
+
+  visit(node, []);
+  return expanded;
 };
 
 export const HomePage = () => {
@@ -65,13 +91,16 @@ export const HomePage = () => {
   const [view, setView] = useState<"overview" | "tree">("overview");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+
   const meta: RepoMeta = useMemo(
     () => ({ owner: "", repo: "", branch: "main", baseUrl: "" }),
-    []
+    [],
   );
 
-  // Derive currentRoot and navigationStack from the URL
-  const pathSegments = useMemo(() => getPathSegments(location.pathname), [location.pathname]);
+  const pathSegments = useMemo(
+    () => getPathSegments(location.pathname),
+    [location.pathname],
+  );
 
   const { currentRoot, navigationStack } = useMemo(() => {
     if (!graph) {
@@ -88,11 +117,9 @@ export const HomePage = () => {
           stack.push(current);
           current = found;
         } else {
-          // Path doesn't exist, return to root
           return { currentRoot: graph.root, navigationStack: [] };
         }
       } else {
-        // Current node has no children, can't navigate further
         return { currentRoot: current, navigationStack: stack };
       }
     }
@@ -101,31 +128,28 @@ export const HomePage = () => {
   }, [graph, pathSegments]);
 
   const handleOverviewSelect = (node: BBNode) => {
-    // Navigate into the node if it has children
     if (node.children && node.children.length > 0) {
       const newPath = [...pathSegments, node.name]
         .map(encodeURIComponent)
         .join("/");
       navigate(`/${newPath}`);
-      setSelected(node); // Keep the folder selected to show its details
+      setSelected(node);
     } else {
-      // Just select the node if it has no children
       setSelected(node);
     }
   };
 
   const handleBreadcrumbClick = (index: number) => {
     if (index === -1) {
-      // Go back to the root
       navigate("/");
     } else {
-      // Go back to a specific level
       const newPath = pathSegments
         .slice(0, index + 1)
         .map(encodeURIComponent)
         .join("/");
       navigate(`/${newPath}`);
     }
+
     setSelected(undefined);
     setFilter("");
   };
@@ -136,14 +160,27 @@ export const HomePage = () => {
     setFilter("");
   };
 
-  const expandedIds = useMemo(() => {
+  const selectedExpandedIds = useMemo(() => {
     if (!selected?.path) {
       return new Set<string>();
     }
+
     const parts = selected.path.split("/");
     const ids = parts.map((_, index) => parts.slice(0, index + 1).join("/"));
     return new Set(ids);
   }, [selected?.path]);
+
+  const filterExpandedIds = useMemo(() => {
+    if (!currentRoot) {
+      return new Set<string>();
+    }
+
+    return collectExpandedIdsForFilter(currentRoot, filter);
+  }, [currentRoot, filter]);
+
+  const expandedIds = useMemo(() => {
+    return new Set([...selectedExpandedIds, ...filterExpandedIds]);
+  }, [selectedExpandedIds, filterExpandedIds]);
 
   useEffect(() => {
     const load = async () => {
@@ -176,7 +213,9 @@ export const HomePage = () => {
   }
 
   if (error) {
-    return <div className="state state--error">Failed to load data. {error}</div>;
+    return (
+      <div className="state state--error">Failed to load data. {error}</div>
+    );
   }
 
   if (!graph || !currentRoot) {
@@ -201,7 +240,7 @@ export const HomePage = () => {
                 <button
                   type="button"
                   className="breadcrumbs__item"
-                  onClick={() => handleBreadcrumbClick(index-1)}
+                  onClick={() => handleBreadcrumbClick(index - 1)}
                 >
                   {node.name}
                 </button>
@@ -209,7 +248,9 @@ export const HomePage = () => {
             ))}
           </>
         ) : null}
-        {navigationStack.length > 0 && <span className="breadcrumbs__separator">/</span>}
+        {navigationStack.length > 0 && (
+          <span className="breadcrumbs__separator">/</span>
+        )}
         <span className="breadcrumbs__current">{currentRoot.name}</span>
       </nav>
     );
@@ -242,13 +283,16 @@ export const HomePage = () => {
           <SearchBar value={filter} onChange={setFilter} />
         </div>
       </header>
+
       {graph.fallbackUsed && (
         <div className="banner">
-          Using fallback sample data because GitHub API access was rate-limited. Set{" "}
-          <code>VITE_GITHUB_TOKEN</code> to load the full repository tree.
+          Using fallback sample data because GitHub API access was rate-limited.
+          Set <code>VITE_GITHUB_TOKEN</code> to load the full repository tree.
         </div>
       )}
+
       {renderBreadcrumbs()}
+
       <main className="main">
         <section className="tree-panel">
           {view === "overview" ? (
@@ -256,6 +300,7 @@ export const HomePage = () => {
               <h3 className="subtree-title">{currentRoot.name}</h3>
               <OverviewPanel
                 root={currentRoot}
+                filter={filter}
                 onSelect={handleOverviewSelect}
                 selectedId={selected?.id}
               />
@@ -270,8 +315,13 @@ export const HomePage = () => {
             />
           )}
         </section>
+
         <aside className="detail-panel-wrapper">
-          <DetailPanel node={selected} meta={meta} onViewInTree={handleViewInTree}/>
+          <DetailPanel
+            node={selected}
+            meta={meta}
+            onViewInTree={handleViewInTree}
+          />
         </aside>
       </main>
     </div>
