@@ -89,6 +89,7 @@ export const HomePage = () => {
   const [selected, setSelected] = useState<BBNode | undefined>();
   const [filter, setFilter] = useState("");
   const [view, setView] = useState<"overview" | "tree">("overview");
+  const [theme, setTheme] = useState<"light" | "dark">("light"); // dark mode: store current theme state
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -257,7 +258,9 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="layout">
+    <div className={`layout ${theme === "dark" ? "theme-dark" : ""}`}>
+      {" "}
+      {/* dark mode: add theme-dark class to root layout when dark mode is active */}
       <header className="header">
         <div>
           <h1>FEDERATE Building Block Explorer</h1>
@@ -280,19 +283,31 @@ export const HomePage = () => {
               Tree
             </button>
           </div>
+
+          <button
+            type="button"
+            className="theme-toggle" // dark mode: add a dedicated class for styling the toggle button
+            onClick={() =>
+              setTheme((prev) => (prev === "light" ? "dark" : "light"))
+            } // dark mode: switch between light and dark theme
+            aria-label={
+              theme === "light" ? "Enable dark mode" : "Enable light mode"
+            } // dark mode: accessible label that changes based on current theme
+          >
+            {theme === "light" ? " Dark" : " Light"}{" "}
+            {/* dark mode: button text/icon changes with current theme */}
+          </button>
+
           <SearchBar value={filter} onChange={setFilter} />
         </div>
       </header>
-
       {graph.fallbackUsed && (
         <div className="banner">
           Using fallback sample data because GitHub API access was rate-limited.
           Set <code>VITE_GITHUB_TOKEN</code> to load the full repository tree.
         </div>
       )}
-
       {renderBreadcrumbs()}
-
       <main className="main">
         <section className="tree-panel">
           {view === "overview" ? (
