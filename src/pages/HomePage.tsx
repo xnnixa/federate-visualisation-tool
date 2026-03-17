@@ -106,7 +106,6 @@ export const HomePage = () => {
       const newPath = [...pathSegments, node.name]
         .map(encodeURIComponent)
         .join("/");
-      setFilter("");
       navigate(`/${newPath}`);
       setSelected(node);
     } else {
@@ -126,7 +125,6 @@ export const HomePage = () => {
     }
 
     setSelected(undefined);
-    setFilter("");
   };
 
   const handleViewInTree = (node: BBNode) => {
