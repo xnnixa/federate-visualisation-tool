@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { BBNode } from "../types/bb";
+import { filterTreeBySearch } from "../lib/search";
 
 interface TreeViewProps {
   root: BBNode;
@@ -8,25 +9,6 @@ interface TreeViewProps {
   selectedId?: string;
   expandedIds?: Set<string>;
 }
-
-const matchesFilter = (node: BBNode, filter: string): boolean => {
-  if (!filter) return true;
-  return node.name.toLowerCase().includes(filter.toLowerCase());
-};
-
-const filterTree = (node: BBNode, filter: string): BBNode | null => {
-  if (!filter) return node;
-
-  const children = node.children
-    ?.map((child) => filterTree(child, filter))
-    .filter((child): child is BBNode => Boolean(child));
-
-  if (matchesFilter(node, filter) || (children && children.length > 0)) {
-    return { ...node, children };
-  }
-
-  return null;
-};
 
 const NodeRow = ({
   node,
@@ -114,7 +96,7 @@ export const TreeView = ({
   selectedId,
   expandedIds,
 }: TreeViewProps) => {
-  const filtered = useMemo(() => filterTree(root, filter), [root, filter]);
+  const filtered = useMemo(() => filterTreeBySearch(root, filter), [root, filter]);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
