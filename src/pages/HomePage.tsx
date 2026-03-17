@@ -4,6 +4,7 @@ import { DetailPanel } from "../components/DetailPanel";
 import { OverviewPanel } from "../components/OverviewPanel";
 import { SearchBar } from "../components/SearchBar";
 import { TreeView } from "../components/TreeView";
+import { collectExpandedIdsForFilter } from "../lib/search";
 import type { BBGraph, BBNode, RepoMeta } from "../types/bb";
 import {
   fetchBBTags,
@@ -52,34 +53,6 @@ const getPathSegments = (pathname: string): string[] => {
     return [];
   }
   return pathname.split("/").filter(Boolean).map(decodeURIComponent);
-};
-
-const collectExpandedIdsForFilter = (
-  node: BBNode,
-  filter: string,
-): Set<string> => {
-  const normalizedFilter = filter.trim().toLowerCase();
-
-  if (!normalizedFilter) {
-    return new Set<string>();
-  }
-
-  const expanded = new Set<string>();
-
-  const visit = (current: BBNode, ancestors: string[]) => {
-    const selfMatches = current.name.toLowerCase().includes(normalizedFilter);
-
-    if (selfMatches) {
-      ancestors.forEach((ancestorId) => expanded.add(ancestorId));
-    }
-
-    current.children?.forEach((child) => {
-      visit(child, [...ancestors, current.id]);
-    });
-  };
-
-  visit(node, []);
-  return expanded;
 };
 
 export const HomePage = () => {
@@ -133,6 +106,7 @@ export const HomePage = () => {
       const newPath = [...pathSegments, node.name]
         .map(encodeURIComponent)
         .join("/");
+      setFilter("");
       navigate(`/${newPath}`);
       setSelected(node);
     } else {
@@ -188,7 +162,7 @@ export const HomePage = () => {
       try {
         setLoading(true);
         const localRoot = getBuildingBlocks();
-        let bbTagFullNames: Record<string, string> = {};
+        let bbTagFullNames: Record<string, string>;
 
         try {
           bbTagFullNames = await fetchBBTags();

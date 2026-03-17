@@ -1,4 +1,9 @@
 import type { BBNode } from "../types/bb";
+import {
+  formatOverviewName,
+  getOverviewSections,
+  hasDescendantOnlySearchMatch,
+} from "../lib/search";
 
 interface OverviewPanelProps {
   root: BBNode;
@@ -24,21 +29,7 @@ export const OverviewPanel = ({
   onSelect,
   selectedId,
 }: OverviewPanelProps) => {
-  const normalizedFilter = filter.trim().toLowerCase();
-
-  const sections = (root.children ?? [])
-    .filter((section) => section.type === "tree" || section.type === "blob")
-    .filter((section) => !section.name.startsWith("."))
-    .filter((section) =>
-      normalizedFilter
-        ? section.name.toLowerCase().includes(normalizedFilter)
-        : true,
-    );
-
-  const formatOverviewName = (fullName?: string) => {
-    if (!fullName) return undefined;
-    return fullName.replace(/\s*\(.*\)\s*$/, "").trim();
-  };
+  const sections = getOverviewSections(root, filter);
 
   if (sections.length === 0) {
     return <div className="overview-empty">No matching sections.</div>;
@@ -50,6 +41,7 @@ export const OverviewPanel = ({
         const overviewName = formatOverviewName(section.fullName);
         const isSelected = selectedId === section.id;
         const isFile = section.type === "blob";
+        const hasNestedMatch = hasDescendantOnlySearchMatch(section, filter);
 
         return (
           <button
@@ -62,6 +54,10 @@ export const OverviewPanel = ({
 
             {overviewName && (
               <div className="overview-card__subtitle">{overviewName}</div>
+            )}
+
+            {hasNestedMatch && (
+              <div className="overview-card__hint">Match found in nested items</div>
             )}
 
             {!isFile && (
