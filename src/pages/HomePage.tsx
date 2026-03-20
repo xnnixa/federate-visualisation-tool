@@ -197,7 +197,7 @@ export const HomePage = () => {
 
   const renderBreadcrumbs = () => {
     return (
-      <nav className="breadcrumbs">
+      <nav className="breadcrumbs" aria-label="Hierarchy breadcrumbs">
         {navigationStack.length > 0 ? (
           <>
             <button
@@ -219,10 +219,10 @@ export const HomePage = () => {
                 </button>
               </span>
             ))}
+            <span className="breadcrumbs__separator">/</span>
           </>
-        ) : null}
-        {navigationStack.length > 0 && (
-          <span className="breadcrumbs__separator">/</span>
+        ) : (
+          <span className="breadcrumbs__label">Location:</span>
         )}
         <span className="breadcrumbs__current">{currentRoot.name}</span>
       </nav>
