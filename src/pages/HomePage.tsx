@@ -117,21 +117,55 @@ export const HomePage = () => {
   const handleBreadcrumbClick = (index: number) => {
     if (index === -1) {
       navigate("/");
-    } else {
-      const newPath = pathSegments
-        .slice(0, index + 1)
-        .map(encodeURIComponent)
-        .join("/");
-      navigate(`/${newPath}`);
+      setSelected(undefined);
+      return;
     }
 
-    setSelected(undefined);
+    const newPathSegments = pathSegments.slice(0, index + 1);
+    const newPath = newPathSegments.map(encodeURIComponent).join("/");
+    navigate(`/${newPath}`);
+
+    // Preserve selection if the selected node is still in the new path
+    if (selected && selected.path) {
+      const selectedPathSegments = selected.path.split("/").filter(Boolean);
+      const isStillInPath = newPathSegments.every(
+        (seg, i) => seg === selectedPathSegments[i],
+      );
+      if (!isStillInPath) {
+        setSelected(undefined);
+      }
+    } else {
+      setSelected(undefined);
+    }
   };
 
   const handleViewInTree = (node: BBNode) => {
     setSelected(node);
     setView("tree");
     setFilter("");
+  };
+
+  const handleBackToParent = () => {
+    if (navigationStack.length > 0) {
+      const parentPath = navigationStack
+        .slice(0, -1)
+        .map((node) => node.name)
+        .map(encodeURIComponent)
+        .join("/");
+      navigate(`/${parentPath}`);
+      // Preserve selection if possible
+      if (selected) {
+        const parent = navigationStack[navigationStack.length - 1];
+        if (selected.path?.startsWith(parent.path || "")) {
+          // Keep selection if it's still under parent
+        } else {
+          setSelected(undefined);
+        }
+      }
+    } else {
+      navigate("/");
+      setSelected(undefined);
+    }
   };
 
   const selectedExpandedIds = useMemo(() => {
@@ -309,6 +343,8 @@ export const HomePage = () => {
             node={selected}
             meta={meta}
             onViewInTree={handleViewInTree}
+            onBackToParent={handleBackToParent}
+            hasParent={navigationStack.length > 0}
           />
         </aside>
       </main>

@@ -5,6 +5,8 @@ interface DetailPanelProps {
   node?: BBNode;
   meta: RepoMeta;
   onViewInTree?: (node: BBNode) => void;
+  onBackToParent?: () => void;
+  hasParent?: boolean;
 }
 
 const README_RAW_BASE =
@@ -30,7 +32,13 @@ const fetchReadme = async (path: string): Promise<string | null> => {
   }
 };
 
-export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
+export const DetailPanel = ({
+  node,
+  meta,
+  onViewInTree,
+  onBackToParent,
+  hasParent,
+}: DetailPanelProps) => {
   const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
   const [readmeResult, setReadmeResult] = useState<{
     path: string;
@@ -168,6 +176,15 @@ export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
       )}
 
       <div className="detail-panel__actions">
+        {hasParent && onBackToParent && (
+          <button
+            type="button"
+            className="detail-panel__button detail-panel__button--secondary"
+            onClick={onBackToParent}
+          >
+            ← Back to parent
+          </button>
+        )}
         {onViewInTree && (
           <button
             type="button"
