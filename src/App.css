@@ -211,6 +211,54 @@
   font-size: 0.9rem;
 }
 
+.overview-card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.overview-card__type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e6f2c7;
+  color: #3f5a1e;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.overview-card__path {
+  color: #6b7b52;
+  font-size: 0.78rem;
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.overview-card__children-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.overview-card__child-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #edf7d7;
+  color: #3f5a1e;
+  font-size: 0.75rem;
+}
+
+.overview-card__child-more {
+  display: inline-block;
+  padding: 2px 8px;
+  color: #6b7b52;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
 .overview-empty {
   padding: 24px;
   color: #6b7b52;
@@ -332,6 +380,38 @@
   padding: 24px;
   text-align: center;
   font-style: italic;
+}
+
+.detail-panel__readme-loading {
+  color: #6b7b52;
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.detail-panel__readme {
+  margin-bottom: 12px;
+}
+
+.detail-panel__children {
+  margin-bottom: 12px;
+}
+
+.detail-panel__children-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-panel__child-item {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f3f8e6;
+  font-size: 0.85rem;
+  color: #2a3a19;
 }
 
 .detail-panel__hierarchy {
@@ -545,4 +625,31 @@
 .layout.theme-dark .detail-panel__hierarchy-current {
   color: #eef6e8;
   background: #2f4924;
+}
+
+.layout.theme-dark .overview-card__type-badge {
+  background: #2f4924;
+  color: #b9c8b1;
+}
+
+.layout.theme-dark .overview-card__path {
+  color: #8a9a7e;
+}
+
+.layout.theme-dark .overview-card__child-tag {
+  background: #2f4924;
+  color: #b9c8b1;
+}
+
+.layout.theme-dark .overview-card__child-more {
+  color: #8a9a7e;
+}
+
+.layout.theme-dark .detail-panel__readme-loading {
+  color: #8a9a7e;
+}
+
+.layout.theme-dark .detail-panel__child-item {
+  background: #222c1f;
+  color: #b9c8b1;
 }
