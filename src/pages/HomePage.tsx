@@ -29,6 +29,7 @@ const toBBNode = (
     path: normalizedPath,
     type: toRepoEntryType(node.type),
     children: node.children?.map((child) => toBBNode(child, bbTagFullNames)),
+    images: node.images,
   };
 };
 

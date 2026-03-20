@@ -5,17 +5,23 @@ export type BuildingBlockNode = {
   type: string;
   path: string;
   children?: BuildingBlockNode[];
+  images?: Array<{ url: string; local: string }>;
 };
 
 export const BB_TAGS_README_URL =
   "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/README.md";
 
-export const parseBuildingBlocks = (data: BuildingBlockNode): BuildingBlockNode => {
+export const parseBuildingBlocks = (
+  data: BuildingBlockNode,
+): BuildingBlockNode => {
   const parseNode = (node: BuildingBlockNode): BuildingBlockNode => {
-    const { name, type, path, children } = node;
+    const { name, type, path, children, images } = node;
     const parsedNode: BuildingBlockNode = { name, type, path };
     if (children && children.length > 0) {
       parsedNode.children = children.map(parseNode);
+    }
+    if (images && images.length > 0) {
+      parsedNode.images = images;
     }
     return parsedNode;
   };
@@ -23,7 +29,9 @@ export const parseBuildingBlocks = (data: BuildingBlockNode): BuildingBlockNode 
   return parseNode(data);
 };
 
-export const parseBBTagsFromReadme = (markdown: string): Record<string, string> => {
+export const parseBBTagsFromReadme = (
+  markdown: string,
+): Record<string, string> => {
   const lines = markdown.split(/\r?\n/);
   const tags: Record<string, string> = {};
 
@@ -67,7 +75,7 @@ export const parseBBTagsFromReadme = (markdown: string): Record<string, string> 
 };
 
 export const fetchBBTags = async (
-  readmeUrl: string = BB_TAGS_README_URL
+  readmeUrl: string = BB_TAGS_README_URL,
 ): Promise<Record<string, string>> => {
   const response = await fetch(readmeUrl);
   if (!response.ok) {

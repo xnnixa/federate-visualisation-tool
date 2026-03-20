@@ -134,6 +134,26 @@ export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
         </div>
       )}
 
+      {node.images && node.images.length > 0 && (
+        <div className="detail-panel__images">
+          <strong>Images</strong>
+          <div className="detail-panel__image-gallery">
+            {node.images.map((img, i) => (
+              <div key={i} className="detail-panel__image-item">
+                <img
+                  src={img.local}
+                  alt={img.url.split("/").pop() || "Image"}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {isFolder && folderChildren.length > 0 && (
         <div className="detail-panel__children">
           <strong>Sub-blocks</strong>
