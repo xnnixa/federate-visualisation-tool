@@ -32,25 +32,29 @@ const fetchReadme = async (path: string): Promise<string | null> => {
 
 export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
   const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
-  const [readme, setReadme] = useState<string | null>(null);
-  const [readmeLoading, setReadmeLoading] = useState(false);
+  const [readmeResult, setReadmeResult] = useState<{
+    path: string;
+    content: string | null;
+  } | null>(null);
 
   useEffect(() => {
-    setReadme(null);
     if (!node?.path || node.type !== "tree") return;
 
     let cancelled = false;
-    setReadmeLoading(true);
     fetchReadme(node.path).then((content) => {
       if (!cancelled) {
-        setReadme(content);
-        setReadmeLoading(false);
+        setReadmeResult({ path: node.path, content });
       }
     });
     return () => {
       cancelled = true;
     };
   }, [node?.path, node?.type]);
+
+  const readme =
+    readmeResult?.path === node?.path ? (readmeResult?.content ?? null) : null;
+  const readmeLoading =
+    node?.type === "tree" && !!node?.path && readmeResult?.path !== node?.path;
 
   if (!node) {
     return (
