@@ -5,6 +5,7 @@ import { filterTreeBySearch } from "../lib/search";
 interface TreeViewProps {
   root: BBNode;
   onSelect: (node: BBNode) => void;
+  onNavigate?: (node: BBNode) => void;
   filter: string;
   selectedId?: string;
   expandedIds?: Set<string>;
@@ -14,14 +15,16 @@ const NodeRow = ({
   node,
   depth,
   onSelect,
+  onNavigate,
   selectedId,
   expandedIds,
 }: {
   node: BBNode;
   depth: number;
   onSelect: (node: BBNode) => void;
+  onNavigate?: (node: BBNode) => void;
   selectedId?: string;
-  expandedIds?: Set<string>;
+  expandedIds: Set<string>;
 }) => {
   const hasChildren = (node.children?.length ?? 0) > 0;
   const isSelected = selectedId === node.id;
@@ -37,7 +40,17 @@ const NodeRow = ({
     <div className="tree-node">
       <div
         className={`tree-node__row ${isSelected ? "is-selected" : ""}`}
-        onClick={() => onSelect(node)}
+        onClick={() => {
+          if (
+            node.type === "tree" &&
+            (node.children?.length ?? 0) > 0 &&
+            onNavigate
+          ) {
+            onNavigate(node);
+          } else {
+            onSelect(node);
+          }
+        }}
         style={{ paddingLeft: `${depth * 16}px` }}
         data-node-id={node.id}
         role="button"
@@ -45,7 +58,15 @@ const NodeRow = ({
         onKeyDown={(event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            onSelect(node);
+            if (
+              node.type === "tree" &&
+              (node.children?.length ?? 0) > 0 &&
+              onNavigate
+            ) {
+              onNavigate(node);
+            } else {
+              onSelect(node);
+            }
           }
         }}
       >
@@ -81,8 +102,9 @@ const NodeRow = ({
             node={child}
             depth={depth + 1}
             onSelect={onSelect}
+            onNavigate={onNavigate}
             selectedId={selectedId}
-            expandedIds={expandedIds}
+            expandedIds={expandedIds ?? new Set()}
           />
         ))}
     </div>
@@ -92,11 +114,15 @@ const NodeRow = ({
 export const TreeView = ({
   root,
   onSelect,
+  onNavigate,
   filter,
   selectedId,
   expandedIds,
 }: TreeViewProps) => {
-  const filtered = useMemo(() => filterTreeBySearch(root, filter), [root, filter]);
+  const filtered = useMemo(
+    () => filterTreeBySearch(root, filter),
+    [root, filter],
+  );
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -127,8 +153,9 @@ export const TreeView = ({
           node={child}
           depth={0}
           onSelect={onSelect}
+          onNavigate={onNavigate}
           selectedId={selectedId}
-          expandedIds={expandedIds}
+          expandedIds={expandedIds ?? new Set()}
         />
       ))}
     </div>
