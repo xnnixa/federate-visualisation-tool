@@ -137,29 +137,6 @@ export const HomePage = () => {
     setFilter("");
   };
 
-  const handleBackToParent = () => {
-    if (navigationStack.length > 0) {
-      const parentPath = navigationStack
-        .slice(0, -1)
-        .map((node) => node.name)
-        .map(encodeURIComponent)
-        .join("/");
-      navigate(`/${parentPath}`);
-      // Preserve selection if possible
-      if (selected) {
-        const parent = navigationStack[navigationStack.length - 1];
-        if (selected.path?.startsWith(parent.path || "")) {
-          // Keep selection if it's still under parent
-        } else {
-          setSelected(undefined);
-        }
-      }
-    } else {
-      navigate("/");
-      setSelected(undefined);
-    }
-  };
-
   const selectedExpandedIds = useMemo(() => {
     if (!selected?.path) {
       return new Set<string>();
@@ -328,8 +305,6 @@ export const HomePage = () => {
             node={selected}
             meta={meta}
             onViewInTree={handleViewInTree}
-            onBackToParent={handleBackToParent}
-            hasParent={navigationStack.length > 0}
           />
         </aside>
       </main>

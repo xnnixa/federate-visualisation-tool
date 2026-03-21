@@ -8,10 +8,6 @@ interface DetailPanelProps {
   meta: RepoMeta;
 
   onViewInTree?: (node: BBNode) => void;
-
-  onBackToParent?: () => void;
-
-  hasParent?: boolean;
 }
 
 const README_RAW_BASE =
@@ -53,10 +49,6 @@ export const DetailPanel = ({
   meta,
 
   onViewInTree,
-
-  onBackToParent: _onBackToParent,
-
-  hasParent: _hasParent,
 }: DetailPanelProps) => {
   const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
 
