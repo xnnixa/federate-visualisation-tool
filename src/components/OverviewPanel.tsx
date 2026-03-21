@@ -64,6 +64,12 @@ export const OverviewPanel = ({
 
             <div className="overview-card__title">{section.name}</div>
 
+            {section.briefDescription && (
+              <div className="overview-card__description">
+                {section.briefDescription}
+              </div>
+            )}
+
             {section.path && (
               <div className="overview-card__path">{section.path}</div>
             )}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import type { BBNode, RepoMeta } from "../types/bb";
+import { extractBriefDescription } from "../lib/parser";
 
 interface DetailPanelProps {
   node?: BBNode;
@@ -80,6 +81,8 @@ export const DetailPanel = ({
   const readmeLoading =
     node?.type === "tree" && !!node?.path && readmeResult?.path !== node?.path;
 
+  const briefDescription = readme ? extractBriefDescription(readme) : null;
+
   if (!node) {
     return (
       <div className="detail-panel">
@@ -107,6 +110,10 @@ export const DetailPanel = ({
       <h2>
         {isFolder ? "📁" : "📄"} {node.name}
       </h2>
+
+      {briefDescription && (
+        <div className="detail-panel__description">{briefDescription}</div>
+      )}
 
       {pathParts.length > 0 && (
         <nav className="detail-panel__hierarchy" aria-label="Node hierarchy">

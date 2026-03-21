@@ -103,6 +103,52 @@ export const fetchBBTags = async (
   return parseBBTagsFromReadme(markdown);
 };
 
+export const extractBriefDescription = (
+  readmeContent: string,
+): string | null => {
+  if (!readmeContent) return null;
+
+  const lines = readmeContent.split("\n");
+  let description = "";
+  let inCodeBlock = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Skip code blocks
+    if (trimmed.startsWith("```")) {
+      inCodeBlock = !inCodeBlock;
+      continue;
+    }
+    if (inCodeBlock) continue;
+
+    // Skip headers, lists, links, images, HTML comments
+    if (
+      trimmed.startsWith("#") ||
+      trimmed.startsWith("*") ||
+      trimmed.startsWith("-") ||
+      trimmed.startsWith("[") ||
+      trimmed.startsWith("![") ||
+      trimmed.startsWith("<!--") ||
+      trimmed === ""
+    ) {
+      continue;
+    }
+
+    // Found a text paragraph - take first sentence or up to 150 chars
+    description = trimmed;
+    const sentenceEnd = description.search(/[.!?]/);
+    if (sentenceEnd > 0 && sentenceEnd < 150) {
+      return description.substring(0, sentenceEnd + 1);
+    } else if (description.length > 150) {
+      return description.substring(0, 150) + "...";
+    }
+    break;
+  }
+
+  return description || null;
+};
+
 export const getBuildingBlocks = (): BuildingBlockNode => {
   return parseBuildingBlocks(buildingBlocks);
 };

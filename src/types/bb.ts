@@ -20,6 +20,7 @@ export interface BBNode {
   type: RepoEntryType;
   children?: BBNode[];
   readmeSnippet?: string;
+  briefDescription?: string;
   images?: Array<{ url: string; local: string }>;
 }
 
