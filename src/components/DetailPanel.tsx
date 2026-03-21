@@ -54,9 +54,9 @@ export const DetailPanel = ({
 
   onViewInTree,
 
-  onBackToParent,
+  onBackToParent: _onBackToParent,
 
-  hasParent,
+  hasParent: _hasParent,
 }: DetailPanelProps) => {
   const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
 
