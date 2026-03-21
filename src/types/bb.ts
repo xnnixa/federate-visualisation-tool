@@ -16,7 +16,6 @@ export interface RepoTreeResponse {
 export interface BBNode {
   id: string;
   name: string;
-  fullName?: string;
   path: string;
   type: RepoEntryType;
   children?: BBNode[];

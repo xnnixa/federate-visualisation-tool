@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
+
 import type { BBNode, RepoMeta } from "../types/bb";
 
 interface DetailPanelProps {
   node?: BBNode;
+
   meta: RepoMeta;
+
   onViewInTree?: (node: BBNode) => void;
+
   onBackToParent?: () => void;
+
   hasParent?: boolean;
 }
 
@@ -15,17 +20,27 @@ const README_RAW_BASE =
 const fetchReadme = async (path: string): Promise<string | null> => {
   try {
     const normalizedPath = path.replaceAll("\\", "/");
+
     const url = `${README_RAW_BASE}/${normalizedPath}/README.md`;
+
     const response = await fetch(url);
+
     if (!response.ok) return null;
+
     const text = await response.text();
+
     return text
+
       .split("\n")
+
       .filter((line) => {
         const trimmed = line.trim();
+
         return !trimmed.startsWith("<!--") && !trimmed.startsWith("![");
       })
+
       .join("\n")
+
       .trim();
   } catch {
     return null;
@@ -34,14 +49,20 @@ const fetchReadme = async (path: string): Promise<string | null> => {
 
 export const DetailPanel = ({
   node,
+
   meta,
+
   onViewInTree,
+
   onBackToParent,
+
   hasParent,
 }: DetailPanelProps) => {
   const realBaseUrl = "https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks";
+
   const [readmeResult, setReadmeResult] = useState<{
     path: string;
+
     content: string | null;
   } | null>(null);
 
@@ -49,11 +70,13 @@ export const DetailPanel = ({
     if (!node?.path || node.type !== "tree") return;
 
     let cancelled = false;
+
     fetchReadme(node.path).then((content) => {
       if (!cancelled) {
         setReadmeResult({ path: node.path, content });
       }
     });
+
     return () => {
       cancelled = true;
     };
@@ -61,6 +84,7 @@ export const DetailPanel = ({
 
   const readme =
     readmeResult?.path === node?.path ? (readmeResult?.content ?? null) : null;
+
   const readmeLoading =
     node?.type === "tree" && !!node?.path && readmeResult?.path !== node?.path;
 
@@ -79,8 +103,11 @@ export const DetailPanel = ({
     : meta.baseUrl;
 
   const pathParts = node.path ? node.path.split("/").filter(Boolean) : [];
+
   const isFolder = node.type === "tree";
+
   const folderChildren = node.children?.filter((c) => c.type === "tree") ?? [];
+
   const fileChildren = node.children?.filter((c) => c.type === "blob") ?? [];
 
   return (
@@ -88,15 +115,13 @@ export const DetailPanel = ({
       <h2>
         {isFolder ? "📁" : "📄"} {node.name}
       </h2>
-      {node.fullName && (
-        <div className="detail-panel__title">{node.fullName}</div>
-      )}
 
       {pathParts.length > 0 && (
         <nav className="detail-panel__hierarchy" aria-label="Node hierarchy">
           {pathParts.map((part, i) => (
             <span key={i} className="detail-panel__hierarchy-step">
               {i > 0 && <span className="detail-panel__hierarchy-sep">›</span>}
+
               <span
                 className={
                   i === pathParts.length - 1
@@ -115,9 +140,11 @@ export const DetailPanel = ({
         <div>
           <strong>Path:</strong> {node.path || "/"}
         </div>
+
         <div>
           <strong>Type:</strong> {isFolder ? "Folder" : "File"}
         </div>
+
         {isFolder && (
           <div>
             <strong>Contents:</strong> {folderChildren.length} folder
@@ -125,6 +152,7 @@ export const DetailPanel = ({
             {fileChildren.length !== 1 ? "s" : ""}
           </div>
         )}
+
         {pathParts.length > 0 && (
           <div>
             <strong>Depth:</strong> Level {pathParts.length}
@@ -135,9 +163,11 @@ export const DetailPanel = ({
       {readmeLoading && (
         <div className="detail-panel__readme-loading">Loading README…</div>
       )}
+
       {readme && (
         <div className="detail-panel__readme">
           <strong>README</strong>
+
           <pre className="detail-panel__snippet">{readme}</pre>
         </div>
       )}
@@ -145,6 +175,7 @@ export const DetailPanel = ({
       {node.images && node.images.length > 0 && (
         <div className="detail-panel__images">
           <strong>Images</strong>
+
           <div className="detail-panel__image-gallery">
             {node.images.map((img, i) => (
               <div key={i} className="detail-panel__image-item">
@@ -165,6 +196,7 @@ export const DetailPanel = ({
       {isFolder && folderChildren.length > 0 && (
         <div className="detail-panel__children">
           <strong>Sub-blocks</strong>
+
           <ul className="detail-panel__children-list">
             {folderChildren.map((child) => (
               <li key={child.id} className="detail-panel__child-item">
@@ -176,15 +208,6 @@ export const DetailPanel = ({
       )}
 
       <div className="detail-panel__actions">
-        {hasParent && onBackToParent && (
-          <button
-            type="button"
-            className="detail-panel__button detail-panel__button--secondary"
-            onClick={onBackToParent}
-          >
-            ← Back to parent
-          </button>
-        )}
         {onViewInTree && (
           <button
             type="button"
@@ -194,6 +217,7 @@ export const DetailPanel = ({
             View in tree view
           </button>
         )}
+
         <a
           href={link}
           target="_blank"

@@ -6,29 +6,21 @@ import { SearchBar } from "../components/SearchBar";
 import { TreeView } from "../components/TreeView";
 import { collectExpandedIdsForFilter } from "../lib/search";
 import type { BBGraph, BBNode, RepoMeta } from "../types/bb";
-import {
-  fetchBBTags,
-  getBuildingBlocks,
-  type BuildingBlockNode,
-} from "../lib/parser";
+import { getBuildingBlocks, type BuildingBlockNode } from "../lib/parser";
 
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
 
 const normalizePath = (path: string): string => path.replaceAll("\\", "/");
 
-const toBBNode = (
-  node: BuildingBlockNode,
-  bbTagFullNames: Record<string, string>,
-): BBNode => {
+const toBBNode = (node: BuildingBlockNode): BBNode => {
   const normalizedPath = normalizePath(node.path);
   return {
     id: normalizedPath || node.name,
     name: node.name,
-    fullName: bbTagFullNames[node.name],
     path: normalizedPath,
     type: toRepoEntryType(node.type),
-    children: node.children?.map((child) => toBBNode(child, bbTagFullNames)),
+    children: node.children?.map((child) => toBBNode(child)),
     images: node.images,
   };
 };
@@ -195,15 +187,7 @@ export const HomePage = () => {
       try {
         setLoading(true);
         const localRoot = getBuildingBlocks();
-        let bbTagFullNames: Record<string, string>;
-
-        try {
-          bbTagFullNames = await fetchBBTags();
-        } catch {
-          bbTagFullNames = {};
-        }
-
-        const root = toBBNode(localRoot, bbTagFullNames);
+        const root = toBBNode(localRoot);
         const builtGraph = buildGraphFromRoot(root);
         setGraph(builtGraph);
       } catch (err) {
