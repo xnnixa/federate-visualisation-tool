@@ -332,6 +332,7 @@ export const HomePage = () => {
               root={currentRoot}
               filter={filter}
               onSelect={setSelected}
+              onNavigate={handleOverviewSelect}
               selectedId={selected?.id}
               expandedIds={expandedIds}
             />

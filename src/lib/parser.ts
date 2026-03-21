@@ -2,9 +2,13 @@ import buildingBlocks from "../assets/building-blocks_structure.json";
 
 export type BuildingBlockNode = {
   name: string;
+
   type: string;
+
   path: string;
+
   children?: BuildingBlockNode[];
+
   images?: Array<{ url: string; local: string }>;
 };
 
@@ -16,13 +20,17 @@ export const parseBuildingBlocks = (
 ): BuildingBlockNode => {
   const parseNode = (node: BuildingBlockNode): BuildingBlockNode => {
     const { name, type, path, children, images } = node;
+
     const parsedNode: BuildingBlockNode = { name, type, path };
+
     if (children && children.length > 0) {
       parsedNode.children = children.map(parseNode);
     }
+
     if (images && images.length > 0) {
       parsedNode.images = images;
     }
+
     return parsedNode;
   };
 
@@ -33,9 +41,11 @@ export const parseBBTagsFromReadme = (
   markdown: string,
 ): Record<string, string> => {
   const lines = markdown.split(/\r?\n/);
+
   const tags: Record<string, string> = {};
 
   let inTable = false;
+
   for (const rawLine of lines) {
     const line = rawLine.trim();
 
@@ -43,6 +53,7 @@ export const parseBBTagsFromReadme = (
       if (/^\|\s*Tag\s*\|\s*Description\s*\|?$/i.test(line)) {
         inTable = true;
       }
+
       continue;
     }
 
@@ -55,8 +66,11 @@ export const parseBBTagsFromReadme = (
     }
 
     const cells = line
+
       .split("|")
+
       .map((cell) => cell.trim())
+
       .filter(Boolean);
 
     if (cells.length < 2) {
@@ -64,6 +78,7 @@ export const parseBBTagsFromReadme = (
     }
 
     const [tag, description] = cells;
+
     if (!tag || !description) {
       continue;
     }
@@ -78,10 +93,13 @@ export const fetchBBTags = async (
   readmeUrl: string = BB_TAGS_README_URL,
 ): Promise<Record<string, string>> => {
   const response = await fetch(readmeUrl);
+
   if (!response.ok) {
     throw new Error(`Failed to fetch BB tags: ${response.status}`);
   }
+
   const markdown = await response.text();
+
   return parseBBTagsFromReadme(markdown);
 };
 
