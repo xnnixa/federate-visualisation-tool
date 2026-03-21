@@ -6,29 +6,22 @@ import { SearchBar } from "../components/SearchBar";
 import { TreeView } from "../components/TreeView";
 import { collectExpandedIdsForFilter } from "../lib/search";
 import type { BBGraph, BBNode, RepoMeta } from "../types/bb";
-import {
-  fetchBBTags,
-  getBuildingBlocks,
-  type BuildingBlockNode,
-} from "../lib/parser";
+import { getBuildingBlocks, type BuildingBlockNode } from "../lib/parser";
 
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
 
 const normalizePath = (path: string): string => path.replaceAll("\\", "/");
 
-const toBBNode = (
-  node: BuildingBlockNode,
-  bbTagFullNames: Record<string, string>,
-): BBNode => {
+const toBBNode = (node: BuildingBlockNode): BBNode => {
   const normalizedPath = normalizePath(node.path);
   return {
     id: normalizedPath || node.name,
     name: node.name,
-    fullName: bbTagFullNames[node.name],
     path: normalizedPath,
     type: toRepoEntryType(node.type),
-    children: node.children?.map((child) => toBBNode(child, bbTagFullNames)),
+    children: node.children?.map((child) => toBBNode(child)),
+    images: node.images,
   };
 };
 
@@ -116,15 +109,26 @@ export const HomePage = () => {
   const handleBreadcrumbClick = (index: number) => {
     if (index === -1) {
       navigate("/");
-    } else {
-      const newPath = pathSegments
-        .slice(0, index + 1)
-        .map(encodeURIComponent)
-        .join("/");
-      navigate(`/${newPath}`);
+      setSelected(undefined);
+      return;
     }
 
-    setSelected(undefined);
+    const newPathSegments = pathSegments.slice(0, index + 1);
+    const newPath = newPathSegments.map(encodeURIComponent).join("/");
+    navigate(`/${newPath}`);
+
+    // Preserve selection if the selected node is still in the new path
+    if (selected && selected.path) {
+      const selectedPathSegments = selected.path.split("/").filter(Boolean);
+      const isStillInPath = newPathSegments.every(
+        (seg, i) => seg === selectedPathSegments[i],
+      );
+      if (!isStillInPath) {
+        setSelected(undefined);
+      }
+    } else {
+      setSelected(undefined);
+    }
   };
 
   const handleViewInTree = (node: BBNode) => {
@@ -160,15 +164,7 @@ export const HomePage = () => {
       try {
         setLoading(true);
         const localRoot = getBuildingBlocks();
-        let bbTagFullNames: Record<string, string>;
-
-        try {
-          bbTagFullNames = await fetchBBTags();
-        } catch {
-          bbTagFullNames = {};
-        }
-
-        const root = toBBNode(localRoot, bbTagFullNames);
+        const root = toBBNode(localRoot);
         const builtGraph = buildGraphFromRoot(root);
         setGraph(builtGraph);
       } catch (err) {
@@ -197,7 +193,7 @@ export const HomePage = () => {
 
   const renderBreadcrumbs = () => {
     return (
-      <nav className="breadcrumbs">
+      <nav className="breadcrumbs" aria-label="Hierarchy breadcrumbs">
         {navigationStack.length > 0 ? (
           <>
             <button
@@ -219,10 +215,10 @@ export const HomePage = () => {
                 </button>
               </span>
             ))}
+            <span className="breadcrumbs__separator">/</span>
           </>
-        ) : null}
-        {navigationStack.length > 0 && (
-          <span className="breadcrumbs__separator">/</span>
+        ) : (
+          <span className="breadcrumbs__label">Location:</span>
         )}
         <span className="breadcrumbs__current">{currentRoot.name}</span>
       </nav>
@@ -297,6 +293,7 @@ export const HomePage = () => {
               root={currentRoot}
               filter={filter}
               onSelect={setSelected}
+              onNavigate={handleOverviewSelect}
               selectedId={selected?.id}
               expandedIds={expandedIds}
             />

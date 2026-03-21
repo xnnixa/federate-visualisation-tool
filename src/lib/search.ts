@@ -2,8 +2,7 @@ import type { BBNode } from "../types/bb";
 
 const isOverviewSection = (node: BBNode): boolean => {
   return (
-    (node.type === "tree" || node.type === "blob") &&
-    !node.name.startsWith(".")
+    (node.type === "tree" || node.type === "blob") && !node.name.startsWith(".")
   );
 };
 
@@ -11,31 +10,8 @@ export const normalizeSearchTerm = (value: string): string => {
   return value.trim().toLowerCase();
 };
 
-export const formatOverviewName = (fullName?: string): string | undefined => {
-  if (!fullName) {
-    return undefined;
-  }
-
-  const trimmed = fullName.trim();
-
-  if (!trimmed.endsWith(")")) {
-    return trimmed || undefined;
-  }
-
-  const suffixStart = trimmed.lastIndexOf("(");
-
-  if (suffixStart <= 0) {
-    return trimmed || undefined;
-  }
-
-  const formatted = trimmed.slice(0, suffixStart).trim();
-  return formatted || trimmed;
-};
-
 const getSearchableTerms = (node: BBNode): string[] => {
-  const overviewName = formatOverviewName(node.fullName);
-
-  return [node.name, node.fullName, overviewName]
+  return [node.name]
     .filter((value): value is string => Boolean(value))
     .map((value) => value.toLowerCase());
 };
@@ -89,15 +65,13 @@ export const filterTreeBySearch = (
 export const getOverviewSections = (root: BBNode, filter: string): BBNode[] => {
   const normalizedFilter = normalizeSearchTerm(filter);
 
-  return (root.children ?? [])
-    .filter(isOverviewSection)
-    .filter((section) => {
-      if (!normalizedFilter) {
-        return true;
-      }
+  return (root.children ?? []).filter(isOverviewSection).filter((section) => {
+    if (!normalizedFilter) {
+      return true;
+    }
 
-      return Boolean(filterTreeByNormalizedSearch(section, normalizedFilter));
-    });
+    return Boolean(filterTreeByNormalizedSearch(section, normalizedFilter));
+  });
 };
 
 export const hasDescendantOnlySearchMatch = (
@@ -106,7 +80,10 @@ export const hasDescendantOnlySearchMatch = (
 ): boolean => {
   const normalizedFilter = normalizeSearchTerm(filter);
 
-  if (!normalizedFilter || nodeMatchesNormalizedSearch(node, normalizedFilter)) {
+  if (
+    !normalizedFilter ||
+    nodeMatchesNormalizedSearch(node, normalizedFilter)
+  ) {
     return false;
   }
 
@@ -142,4 +119,3 @@ export const collectExpandedIdsForFilter = (
   visit(node, []);
   return expanded;
 };
-

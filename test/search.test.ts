@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import {
   collectExpandedIdsForFilter,
   filterTreeBySearch,
-  formatOverviewName,
   getOverviewSections,
   hasDescendantOnlySearchMatch,
   nodeMatchesSearch,
@@ -27,7 +26,6 @@ const root = createNode({
       name: "Platform",
       path: "Platform",
       type: "tree",
-      fullName: "Platform Systems (PLT)",
       children: [
         createNode({
           id: "root/platform/alpha",
@@ -40,7 +38,6 @@ const root = createNode({
               name: "Model-Development-and-Training",
               path: "Platform/Alpha/Model-Development-and-Training",
               type: "tree",
-              fullName: "Model Development and Training (AI/ML)",
             }),
           ],
         }),
@@ -78,19 +75,17 @@ const root = createNode({
 });
 
 describe("shared search helpers", () => {
-  it("matches node names and full names case-insensitively", () => {
+  it("matches node names case-insensitively", () => {
     const platformNode = root.children?.[0];
 
     expect(platformNode).toBeDefined();
     expect(nodeMatchesSearch(platformNode!, "platform")).toBe(true);
-    expect(nodeMatchesSearch(platformNode!, "systems")).toBe(true);
-    expect(nodeMatchesSearch(platformNode!, "plt")).toBe(true);
-    expect(formatOverviewName(platformNode!.fullName)).toBe("Platform Systems");
+    expect(nodeMatchesSearch(platformNode!, "PLATFORM")).toBe(true);
     expect(nodeMatchesSearch(platformNode!, "missing")).toBe(false);
   });
 
   it("keeps ancestor branches in tree results when a descendant matches", () => {
-    const filtered = filterTreeBySearch(root, "ai/ml");
+    const filtered = filterTreeBySearch(root, "training");
 
     expect(filtered).not.toBeNull();
     expect(filtered?.children).toHaveLength(1);
@@ -104,9 +99,9 @@ describe("shared search helpers", () => {
   });
 
   it("returns overview sections when either the section or a descendant matches", () => {
-    expect(getOverviewSections(root, "training").map((node) => node.name)).toEqual([
-      "Platform",
-    ]);
+    expect(
+      getOverviewSections(root, "training").map((node) => node.name),
+    ).toEqual(["Platform"]);
 
     expect(getOverviewSections(root, "logs").map((node) => node.name)).toEqual([
       "Operations",
@@ -123,7 +118,9 @@ describe("shared search helpers", () => {
     expect(hasDescendantOnlySearchMatch(platformNode!, "training")).toBe(true);
     expect(hasDescendantOnlySearchMatch(platformNode!, "platform")).toBe(false);
     expect(hasDescendantOnlySearchMatch(operationsNode!, "logs")).toBe(true);
-    expect(hasDescendantOnlySearchMatch(operationsNode!, "operations")).toBe(false);
+    expect(hasDescendantOnlySearchMatch(operationsNode!, "operations")).toBe(
+      false,
+    );
     expect(hasDescendantOnlySearchMatch(platformNode!, "")).toBe(false);
   });
 
