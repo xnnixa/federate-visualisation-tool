@@ -199,35 +199,48 @@ export const HomePage = () => {
   }
 
   const renderBreadcrumbs = () => {
+    const totalDepth = navigationStack.length + 1;
+
     return (
       <nav className="breadcrumbs" aria-label="Hierarchy breadcrumbs">
-        {navigationStack.length > 0 ? (
-          <>
-            <button
-              type="button"
-              className="breadcrumbs__item"
-              onClick={() => handleBreadcrumbClick(-1)}
-            >
-              Root
-            </button>
-            {navigationStack.map((node, index) => (
-              <span key={node.id}>
-                <span className="breadcrumbs__separator">/</span>
-                <button
-                  type="button"
-                  className="breadcrumbs__item"
-                  onClick={() => handleBreadcrumbClick(index - 1)}
-                >
-                  {node.name}
-                </button>
-              </span>
-            ))}
-            <span className="breadcrumbs__separator">/</span>
-          </>
-        ) : (
-          <span className="breadcrumbs__label">Location:</span>
-        )}
-        <span className="breadcrumbs__current">{currentRoot.name}</span>
+        <div className="breadcrumbs__structure-info">
+          <span className="breadcrumbs__depth-badge">Level {totalDepth}</span>
+          {navigationStack.length > 0 && (
+            <span className="breadcrumbs__path-preview">
+              Root {navigationStack.map((node) => node.name).join(" › ")} ›{" "}
+              {currentRoot.name}
+            </span>
+          )}
+        </div>
+        <div className="breadcrumbs__nav">
+          {navigationStack.length > 0 ? (
+            <>
+              <button
+                type="button"
+                className="breadcrumbs__item"
+                onClick={() => handleBreadcrumbClick(-1)}
+              >
+                Root
+              </button>
+              {navigationStack.map((node, index) => (
+                <span key={node.id}>
+                  <span className="breadcrumbs__separator">›</span>
+                  <button
+                    type="button"
+                    className="breadcrumbs__item"
+                    onClick={() => handleBreadcrumbClick(index - 1)}
+                  >
+                    {node.name}
+                  </button>
+                </span>
+              ))}
+              <span className="breadcrumbs__separator">›</span>
+            </>
+          ) : (
+            <span className="breadcrumbs__label">Location:</span>
+          )}
+          <span className="breadcrumbs__current">{currentRoot.name}</span>
+        </div>
       </nav>
     );
   };
