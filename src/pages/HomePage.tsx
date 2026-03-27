@@ -266,7 +266,7 @@ export const HomePage = () => {
             disabled={loading}
             title="Refresh data from repository"
           >
-            {loading ? "⟳" : "🔄"} Refresh
+            {loading ? "Refreshing..." : "Refresh"}
           </button>
 
           <button
@@ -289,13 +289,13 @@ export const HomePage = () => {
       {graph.fallbackUsed && (
         <div className="banner">
           <span>
-            📦 Using cached data. Click Refresh to get the latest updates.
+            Using cached data. Click Refresh to get the latest updates.
           </span>
         </div>
       )}
       {!graph.fallbackUsed && isUsingFreshData && (
         <div className="banner banner--success">
-          <span>✅ Showing latest data from repository</span>
+          <span>Showing latest data from repository</span>
         </div>
       )}
       {renderBreadcrumbs()}

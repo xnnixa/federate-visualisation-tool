@@ -108,7 +108,7 @@ export const DetailPanel = ({
   return (
     <div className="detail-panel">
       <h2>
-        {isFolder ? "📁" : "📄"} {node.name}
+        {isFolder ? "Folder" : "File"}: {node.name}
       </h2>
 
       {briefDescription && (
@@ -199,7 +199,7 @@ export const DetailPanel = ({
           <ul className="detail-panel__children-list">
             {folderChildren.map((child) => (
               <li key={child.id} className="detail-panel__child-item">
-                📁 {child.name}
+                {child.name}
               </li>
             ))}
           </ul>

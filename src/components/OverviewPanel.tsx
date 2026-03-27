@@ -58,7 +58,7 @@ export const OverviewPanel = ({
           >
             <div className="overview-card__header">
               <span className="overview-card__type-badge">
-                {isFile ? "📄 File" : "📁 Folder"}
+                {isFile ? "File" : "Folder"}
               </span>
             </div>
 
