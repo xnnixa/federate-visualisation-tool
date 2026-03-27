@@ -83,26 +83,27 @@
   transition: all 0.15s ease;
 }
 
-.breadcrumbs__item.refresh-button {
-  background: #e8f0d9;
-  border: 1px solid #c6dba5;
-  color: #4a5a34;
-  padding: 8px 12px;
-  border-radius: 4px;
+.refresh-button {
+  border: 1px solid #8fb248;
+  background: rgba(255, 255, 255, 0.7);
+  color: #2f3b1a;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 0.85rem;
   transition: all 0.2s ease;
   margin-right: 8px;
 }
 
 .refresh-button:hover:not(:disabled) {
-  background: #d4e4c0;
-  border-color: #b5d08a;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #7ba03f;
 }
 
 .refresh-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .breadcrumbs__item:hover {
