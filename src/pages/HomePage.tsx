@@ -6,29 +6,22 @@ import { SearchBar } from "../components/SearchBar";
 import { TreeView } from "../components/TreeView";
 import { collectExpandedIdsForFilter } from "../lib/search";
 import type { BBGraph, BBNode, RepoMeta } from "../types/bb";
-import {
-  fetchBBTags,
-  getBuildingBlocks,
-  type BuildingBlockNode,
-} from "../lib/parser";
+import { getBuildingBlocks, type BuildingBlockNode } from "../lib/parser";
 
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
 
 const normalizePath = (path: string): string => path.replaceAll("\\", "/");
 
-const toBBNode = (
-  node: BuildingBlockNode,
-  bbTagFullNames: Record<string, string>,
-): BBNode => {
+const toBBNode = (node: BuildingBlockNode): BBNode => {
   const normalizedPath = normalizePath(node.path);
   return {
     id: normalizedPath || node.name,
     name: node.name,
-    fullName: bbTagFullNames[node.name],
     path: normalizedPath,
     type: toRepoEntryType(node.type),
-    children: node.children?.map((child) => toBBNode(child, bbTagFullNames)),
+    children: node.children?.map((child) => toBBNode(child)),
+    images: node.images,
   };
 };
 
@@ -65,6 +58,7 @@ export const HomePage = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light"); // dark mode: store current theme state
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isUsingFreshData, setIsUsingFreshData] = useState(false);
 
   const meta: RepoMeta = useMemo(
     () => ({ owner: "", repo: "", branch: "main", baseUrl: "" }),
@@ -116,21 +110,36 @@ export const HomePage = () => {
   const handleBreadcrumbClick = (index: number) => {
     if (index === -1) {
       navigate("/");
-    } else {
-      const newPath = pathSegments
-        .slice(0, index + 1)
-        .map(encodeURIComponent)
-        .join("/");
-      navigate(`/${newPath}`);
+      setSelected(undefined);
+      return;
     }
 
-    setSelected(undefined);
+    const newPathSegments = pathSegments.slice(0, index + 1);
+    const newPath = newPathSegments.map(encodeURIComponent).join("/");
+    navigate(`/${newPath}`);
+
+    // Preserve selection if the selected node is still in the new path
+    if (selected && selected.path) {
+      const selectedPathSegments = selected.path.split("/").filter(Boolean);
+      const isStillInPath = newPathSegments.every(
+        (seg, i) => seg === selectedPathSegments[i],
+      );
+      if (!isStillInPath) {
+        setSelected(undefined);
+      }
+    } else {
+      setSelected(undefined);
+    }
   };
 
   const handleViewInTree = (node: BBNode) => {
     setSelected(node);
     setView("tree");
     setFilter("");
+  };
+
+  const handleRefresh = async () => {
+    await load();
   };
 
   const selectedExpandedIds = useMemo(() => {
@@ -151,33 +160,27 @@ export const HomePage = () => {
     return collectExpandedIdsForFilter(currentRoot, filter);
   }, [currentRoot, filter]);
 
+  const load = async () => {
+    try {
+      setLoading(true);
+      const result = await getBuildingBlocks();
+      const root = toBBNode(result.data);
+      const builtGraph = buildGraphFromRoot(root);
+      builtGraph.fallbackUsed = !result.isFresh;
+      setGraph(builtGraph);
+      setIsUsingFreshData(result.isFresh);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unexpected error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const expandedIds = useMemo(() => {
     return new Set([...selectedExpandedIds, ...filterExpandedIds]);
   }, [selectedExpandedIds, filterExpandedIds]);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        setLoading(true);
-        const localRoot = getBuildingBlocks();
-        let bbTagFullNames: Record<string, string>;
-
-        try {
-          bbTagFullNames = await fetchBBTags();
-        } catch {
-          bbTagFullNames = {};
-        }
-
-        const root = toBBNode(localRoot, bbTagFullNames);
-        const builtGraph = buildGraphFromRoot(root);
-        setGraph(builtGraph);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unexpected error");
-      } finally {
-        setLoading(false);
-      }
-    };
-
     void load();
   }, []);
 
@@ -197,7 +200,7 @@ export const HomePage = () => {
 
   const renderBreadcrumbs = () => {
     return (
-      <nav className="breadcrumbs">
+      <nav className="breadcrumbs" aria-label="Hierarchy breadcrumbs">
         {navigationStack.length > 0 ? (
           <>
             <button
@@ -219,10 +222,10 @@ export const HomePage = () => {
                 </button>
               </span>
             ))}
+            <span className="breadcrumbs__separator">/</span>
           </>
-        ) : null}
-        {navigationStack.length > 0 && (
-          <span className="breadcrumbs__separator">/</span>
+        ) : (
+          <span className="breadcrumbs__label">Location:</span>
         )}
         <span className="breadcrumbs__current">{currentRoot.name}</span>
       </nav>
@@ -258,6 +261,16 @@ export const HomePage = () => {
 
           <button
             type="button"
+            className="refresh-button"
+            onClick={handleRefresh}
+            disabled={loading}
+            title="Refresh data from repository"
+          >
+            {loading ? "Refreshing..." : "Refresh"}
+          </button>
+
+          <button
+            type="button"
             className="theme-toggle" // dark mode: add a dedicated class for styling the toggle button
             onClick={() =>
               setTheme((prev) => (prev === "light" ? "dark" : "light"))
@@ -275,8 +288,14 @@ export const HomePage = () => {
       </header>
       {graph.fallbackUsed && (
         <div className="banner">
-          Using fallback sample data because GitHub API access was rate-limited.
-          Set <code>VITE_GITHUB_TOKEN</code> to load the full repository tree.
+          <span>
+            Using cached data. Click Refresh to get the latest updates.
+          </span>
+        </div>
+      )}
+      {!graph.fallbackUsed && isUsingFreshData && (
+        <div className="banner banner--success">
+          <span>Showing latest data from repository</span>
         </div>
       )}
       {renderBreadcrumbs()}
@@ -297,6 +316,7 @@ export const HomePage = () => {
               root={currentRoot}
               filter={filter}
               onSelect={setSelected}
+              onNavigate={handleOverviewSelect}
               selectedId={selected?.id}
               expandedIds={expandedIds}
             />
