@@ -1,3 +1,30 @@
+/* Typography Scale */
+:root {
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -23,13 +50,19 @@
 }
 
 .header h1 {
-  margin: 0 0 8px;
-  font-size: 1.75rem;
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.025em;
 }
 
 .header p {
   margin: 0;
   color: #2e3a1f;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
 }
 
 .main {
@@ -173,10 +206,14 @@
 }
 
 .subtree-title {
-  margin: 0 0 16px 0;
+  margin: 0 0 var(--spacing-lg) 0;
   color: #2a3a19;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.025em;
+  border-bottom: 2px solid #e8f0d9;
+  padding-bottom: var(--spacing-sm);
 }
 
 .overview-grid {
@@ -212,9 +249,12 @@
 }
 
 .overview-card__title {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: #2a3a19;
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.025em;
 }
 
 .overview-card__subtitle {
@@ -237,7 +277,9 @@
 
 .overview-card__meta {
   color: #5a6a44;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
 }
 
 .overview-card__header {
@@ -300,8 +342,15 @@
 }
 
 .overview-empty {
-  padding: 24px;
+  padding: var(--spacing-xl);
   color: #6b7b52;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  background: #f8faf3;
+  border-radius: 12px;
+  border: 2px dashed #d7e7c0;
+  margin: var(--spacing-md) 0;
 }
 
 .tree-view {
@@ -354,29 +403,25 @@
 }
 
 .tree-node__folder {
-  font-weight: 600;
-}
-
-.tree-node__folder::before {
-  content: "📁";
-  margin-right: 4px;
-  font-size: 0.85em;
+  font-weight: var(--font-weight-semibold);
+  color: #2a3a19;
 }
 
 .tree-node__file {
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   color: #4f5b3a;
 }
 
-.tree-node__file::before {
-  content: "📄";
-  margin-right: 4px;
-  font-size: 0.85em;
-}
-
 .tree-empty {
-  padding: 24px;
+  padding: var(--spacing-xl);
   color: #6b7b52;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  background: #f8faf3;
+  border-radius: 12px;
+  border: 2px dashed #d7e7c0;
+  margin: var(--spacing-md) 0;
 }
 
 .detail-panel-wrapper {
@@ -401,9 +446,20 @@
 
 .detail-panel__meta {
   display: grid;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: #f8faf3;
+  border-radius: 8px;
+  border: 1px solid #e8f0d9;
   color: #314224;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.detail-panel__meta strong {
+  font-weight: var(--font-weight-semibold);
+  color: #2a3a19;
 }
 
 .detail-panel__snippet {
@@ -417,9 +473,15 @@
 
 .detail-panel__empty {
   color: #6b7b52;
-  padding: 24px;
+  padding: var(--spacing-xl);
   text-align: center;
-  font-style: italic;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  font-style: normal;
+  background: #f8faf3;
+  border-radius: 12px;
+  border: 2px dashed #d7e7c0;
+  margin: var(--spacing-md) 0;
 }
 
 .detail-panel__description {
@@ -441,7 +503,37 @@
 }
 
 .detail-panel__readme {
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-panel__readme strong {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: #2a3a19;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #e8f0d9;
+}
+
+.detail-panel__images strong {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: #2a3a19;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #e8f0d9;
+}
+
+.detail-panel__children strong {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: #2a3a19;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #e8f0d9;
 }
 
 .detail-panel__children {
@@ -672,7 +764,14 @@
 }
 
 .layout.theme-dark .overview-card__subtitle,
-.layout.theme-dark .overview-card__meta,
+.layout.theme-dark .overview-card__meta {
+  color: #7ba958;
+}
+
+.layout.theme-dark .tree-node__folder {
+  color: #7ba958;
+}
+
 .layout.theme-dark .tree-node__file,
 .layout.theme-dark .detail-panel__meta,
 .layout.theme-dark .detail-panel__empty,
@@ -737,6 +836,31 @@
   color: #b9c8b1;
   background: #1f2918;
   border-left-color: #4a5d37;
+}
+
+.layout.theme-dark .overview-empty,
+.layout.theme-dark .tree-empty,
+.layout.theme-dark .detail-panel__empty {
+  background: #1f2918;
+  border-color: #3d4d37;
+  color: #b9c8b1;
+}
+
+.layout.theme-dark .detail-panel__meta {
+  background: #1f2918;
+  border-color: #3d4d37;
+  color: #b9c8b1;
+}
+
+.layout.theme-dark .detail-panel__meta strong {
+  color: #7ba958;
+}
+
+.layout.theme-dark .detail-panel__readme strong,
+.layout.theme-dark .detail-panel__images strong,
+.layout.theme-dark .detail-panel__children strong {
+  color: #7ba958;
+  border-color: #3d4d37;
 }
 
 .layout.theme-dark .detail-panel__image-item {
