@@ -58,6 +58,7 @@ export const HomePage = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light"); // dark mode: store current theme state
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isUsingFreshData, setIsUsingFreshData] = useState(false);
 
   const meta: RepoMeta = useMemo(
     () => ({ owner: "", repo: "", branch: "main", baseUrl: "" }),
@@ -137,6 +138,10 @@ export const HomePage = () => {
     setFilter("");
   };
 
+  const handleRefresh = async () => {
+    await load();
+  };
+
   const selectedExpandedIds = useMemo(() => {
     if (!selected?.path) {
       return new Set<string>();
@@ -155,25 +160,27 @@ export const HomePage = () => {
     return collectExpandedIdsForFilter(currentRoot, filter);
   }, [currentRoot, filter]);
 
+  const load = async () => {
+    try {
+      setLoading(true);
+      const result = await getBuildingBlocks();
+      const root = toBBNode(result.data);
+      const builtGraph = buildGraphFromRoot(root);
+      builtGraph.fallbackUsed = !result.isFresh;
+      setGraph(builtGraph);
+      setIsUsingFreshData(result.isFresh);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unexpected error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const expandedIds = useMemo(() => {
     return new Set([...selectedExpandedIds, ...filterExpandedIds]);
   }, [selectedExpandedIds, filterExpandedIds]);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        setLoading(true);
-        const localRoot = getBuildingBlocks();
-        const root = toBBNode(localRoot);
-        const builtGraph = buildGraphFromRoot(root);
-        setGraph(builtGraph);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Unexpected error");
-      } finally {
-        setLoading(false);
-      }
-    };
-
     void load();
   }, []);
 
@@ -254,6 +261,16 @@ export const HomePage = () => {
 
           <button
             type="button"
+            className="refresh-button"
+            onClick={handleRefresh}
+            disabled={loading}
+            title="Refresh data from repository"
+          >
+            {loading ? "⟳" : "🔄"} Refresh
+          </button>
+
+          <button
+            type="button"
             className="theme-toggle" // dark mode: add a dedicated class for styling the toggle button
             onClick={() =>
               setTheme((prev) => (prev === "light" ? "dark" : "light"))
@@ -271,8 +288,14 @@ export const HomePage = () => {
       </header>
       {graph.fallbackUsed && (
         <div className="banner">
-          Using fallback sample data because GitHub API access was rate-limited.
-          Set <code>VITE_GITHUB_TOKEN</code> to load the full repository tree.
+          <span>
+            📦 Using cached data. Click Refresh to get the latest updates.
+          </span>
+        </div>
+      )}
+      {!graph.fallbackUsed && isUsingFreshData && (
+        <div className="banner banner--success">
+          <span>✅ Showing latest data from repository</span>
         </div>
       )}
       {renderBreadcrumbs()}

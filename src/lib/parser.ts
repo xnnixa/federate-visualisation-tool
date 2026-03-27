@@ -149,6 +149,38 @@ export const extractBriefDescription = (
   return description || null;
 };
 
-export const getBuildingBlocks = (): BuildingBlockNode => {
-  return parseBuildingBlocks(buildingBlocks);
+export const fetchBuildingBlocksFromGitHub =
+  async (): Promise<BuildingBlockNode | null> => {
+    try {
+      const response = await fetch(
+        "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/building-blocks_structure.json",
+      );
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return parseBuildingBlocks(data);
+    } catch (error) {
+      console.warn(
+        "Failed to fetch building blocks from GitHub, using cached data:",
+        error,
+      );
+      return null;
+    }
+  };
+
+export const getBuildingBlocks = async (): Promise<{
+  data: BuildingBlockNode;
+  isFresh: boolean;
+}> => {
+  // Try to fetch fresh data first
+  const freshData = await fetchBuildingBlocksFromGitHub();
+  if (freshData) {
+    return { data: freshData, isFresh: true };
+  }
+
+  // Fallback to cached data
+  return { data: parseBuildingBlocks(buildingBlocks), isFresh: false };
 };
