@@ -2,32 +2,50 @@ import buildingBlocks from "../assets/building-blocks_structure.json";
 
 export type BuildingBlockNode = {
   name: string;
+
   type: string;
+
   path: string;
+
   children?: BuildingBlockNode[];
+
+  images?: Array<{ url: string; local: string }>;
 };
 
 export const BB_TAGS_README_URL =
   "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/README.md";
 
-export const parseBuildingBlocks = (data: BuildingBlockNode): BuildingBlockNode => {
+export const parseBuildingBlocks = (
+  data: BuildingBlockNode,
+): BuildingBlockNode => {
   const parseNode = (node: BuildingBlockNode): BuildingBlockNode => {
-    const { name, type, path, children } = node;
+    const { name, type, path, children, images } = node;
+
     const parsedNode: BuildingBlockNode = { name, type, path };
+
     if (children && children.length > 0) {
       parsedNode.children = children.map(parseNode);
     }
+
+    if (images && images.length > 0) {
+      parsedNode.images = images;
+    }
+
     return parsedNode;
   };
 
   return parseNode(data);
 };
 
-export const parseBBTagsFromReadme = (markdown: string): Record<string, string> => {
+export const parseBBTagsFromReadme = (
+  markdown: string,
+): Record<string, string> => {
   const lines = markdown.split(/\r?\n/);
+
   const tags: Record<string, string> = {};
 
   let inTable = false;
+
   for (const rawLine of lines) {
     const line = rawLine.trim();
 
@@ -35,6 +53,7 @@ export const parseBBTagsFromReadme = (markdown: string): Record<string, string> 
       if (/^\|\s*Tag\s*\|\s*Description\s*\|?$/i.test(line)) {
         inTable = true;
       }
+
       continue;
     }
 
@@ -47,8 +66,11 @@ export const parseBBTagsFromReadme = (markdown: string): Record<string, string> 
     }
 
     const cells = line
+
       .split("|")
+
       .map((cell) => cell.trim())
+
       .filter(Boolean);
 
     if (cells.length < 2) {
@@ -56,6 +78,7 @@ export const parseBBTagsFromReadme = (markdown: string): Record<string, string> 
     }
 
     const [tag, description] = cells;
+
     if (!tag || !description) {
       continue;
     }
@@ -67,16 +90,97 @@ export const parseBBTagsFromReadme = (markdown: string): Record<string, string> 
 };
 
 export const fetchBBTags = async (
-  readmeUrl: string = BB_TAGS_README_URL
+  readmeUrl: string = BB_TAGS_README_URL,
 ): Promise<Record<string, string>> => {
   const response = await fetch(readmeUrl);
+
   if (!response.ok) {
     throw new Error(`Failed to fetch BB tags: ${response.status}`);
   }
+
   const markdown = await response.text();
+
   return parseBBTagsFromReadme(markdown);
 };
 
-export const getBuildingBlocks = (): BuildingBlockNode => {
-  return parseBuildingBlocks(buildingBlocks);
+export const extractBriefDescription = (
+  readmeContent: string,
+): string | null => {
+  if (!readmeContent) return null;
+
+  const lines = readmeContent.split("\n");
+  let description = "";
+  let inCodeBlock = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Skip code blocks
+    if (trimmed.startsWith("```")) {
+      inCodeBlock = !inCodeBlock;
+      continue;
+    }
+    if (inCodeBlock) continue;
+
+    // Skip headers, lists, links, images, HTML comments
+    if (
+      trimmed.startsWith("#") ||
+      trimmed.startsWith("*") ||
+      trimmed.startsWith("-") ||
+      trimmed.startsWith("[") ||
+      trimmed.startsWith("![") ||
+      trimmed.startsWith("<!--") ||
+      trimmed === ""
+    ) {
+      continue;
+    }
+
+    // Found a text paragraph - take first sentence or up to 150 chars
+    description = trimmed;
+    const sentenceEnd = description.search(/[.!?]/);
+    if (sentenceEnd > 0 && sentenceEnd < 150) {
+      return description.substring(0, sentenceEnd + 1);
+    } else if (description.length > 150) {
+      return description.substring(0, 150) + "...";
+    }
+    break;
+  }
+
+  return description || null;
+};
+
+export const fetchBuildingBlocksFromGitHub =
+  async (): Promise<BuildingBlockNode | null> => {
+    try {
+      const response = await fetch(
+        "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/building-blocks_structure.json",
+      );
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return parseBuildingBlocks(data);
+    } catch (error) {
+      console.warn(
+        "Failed to fetch building blocks from GitHub, using cached data:",
+        error,
+      );
+      return null;
+    }
+  };
+
+export const getBuildingBlocks = async (): Promise<{
+  data: BuildingBlockNode;
+  isFresh: boolean;
+}> => {
+  // Try to fetch fresh data first
+  const freshData = await fetchBuildingBlocksFromGitHub();
+  if (freshData) {
+    return { data: freshData, isFresh: true };
+  }
+
+  // Fallback to cached data
+  return { data: parseBuildingBlocks(buildingBlocks), isFresh: false };
 };
