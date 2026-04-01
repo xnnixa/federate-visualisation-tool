@@ -20,7 +20,7 @@ export interface BBNode {
   path: string;
   type: RepoEntryType;
   children?: BBNode[];
-  readmeSnippet?: string;
+  readmeContent?: string;
 }
 
 export interface BBEdge {

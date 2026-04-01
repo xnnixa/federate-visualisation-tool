@@ -347,6 +347,20 @@
   color: #4a5a3a;
 }
 
+.detail-panel__readme {
+  background: #f6faef;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-bottom: 16px;
+  border: 1px solid #e3efd0;
+  color: #2a3a19;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 .detail-panel__empty {
   color: #8a9a74;
   padding: 32px 24px;
@@ -499,6 +513,13 @@
 .layout.theme-dark .detail-panel__title,
 .layout.theme-dark .breadcrumbs__current {
   color: #7ba958;
+}
+
+.layout.theme-dark .detail-panel__snippet,
+.layout.theme-dark .detail-panel__readme {
+  background: #1e261a;
+  border-color: #3d4d35;
+  color: #d0e0c0;
 }
 
 .layout.theme-dark .overview-card__subtitle,
