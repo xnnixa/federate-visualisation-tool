@@ -40,9 +40,11 @@ def traverse_directory(root_path, relative_to=None, is_root=False):
         "path": path_str
     }
     
-    # If it's a directory, add children
+    # If it's a directory, add children and look for README
     if root_path.is_dir():
         children = []
+        readme_content = None
+        
         try:
             # Sort entries: directories first, then files, alphabetically
             entries = sorted(root_path.iterdir(), 
@@ -52,12 +54,29 @@ def traverse_directory(root_path, relative_to=None, is_root=False):
                 # Skip hidden files and .git directory
                 if entry.name.startswith('.'):
                     continue
+                
+                # Check for README.md (case insensitive)
+                if entry.is_file() and entry.name.lower() == 'readme.md':
+                    try:
+                        content = entry.read_text(encoding='utf-8')
+                        # Truncate to 8000 characters with marker
+                        if len(content) > 8000:
+                            content = content[:8000] + "\n\n[Content truncated due to length...]"
+                        readme_content = content
+                    except (UnicodeDecodeError, IOError):
+                        # Skip files that can't be read as text
+                        pass
+                    continue
                     
                 child_node = traverse_directory(entry, relative_to)
                 children.append(child_node)
             
             if children:
                 node["children"] = children
+                
+            if readme_content:
+                node["readmeContent"] = readme_content
+                
         except PermissionError:
             # If we can't read a directory, note it
             node["error"] = "Permission denied"
