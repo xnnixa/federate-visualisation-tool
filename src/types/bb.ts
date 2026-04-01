@@ -22,6 +22,7 @@ export interface BBNode {
   children?: BBNode[];
   readmeContent?: string;
   briefDescription?: string;
+  images?: string[];
 }
 
 export interface BBEdge {

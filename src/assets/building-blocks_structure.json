@@ -475,7 +475,10 @@
       "name": "BB-CSC",
       "type": "directory",
       "path": "BB-CSC",
-      "readmeContent": "<!-- TODO: finish landing page -->\n# BB-CSC\n\n![BB-CSC](/figures/BB-CSC.png)\n"
+      "readmeContent": "<!-- TODO: finish landing page -->\n# BB-CSC\n\n![BB-CSC](/figures/BB-CSC.png)\n",
+      "images": [
+        "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/figures/BB-CSC.png"
+      ]
     },
     {
       "name": "BB-CSC-TC",
@@ -1113,7 +1116,10 @@
           "readmeContent": "# AppLayer\n"
         }
       ],
-      "readmeContent": "<!-- TODO: finish landing page -->\n# BB-SC\n\n![BB-SC](/figures/BB-SC.png)\n"
+      "readmeContent": "<!-- TODO: finish landing page -->\n# BB-SC\n\n![BB-SC](/figures/BB-SC.png)\n",
+      "images": [
+        "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/figures/BB-SC.png"
+      ]
     },
     {
       "name": "BB-SC-TC",
@@ -1878,7 +1884,10 @@
               "path": "WorkInProgress\\BB-CSC\\BB_Vehicle_monitor.md"
             }
           ],
-          "readmeContent": "<!-- TODO: finish landing page -->\n# BB-CSC\n\n![BB-CSC](/figures/BB-CSC.png)\n"
+          "readmeContent": "<!-- TODO: finish landing page -->\n# BB-CSC\n\n![BB-CSC](/figures/BB-CSC.png)\n",
+          "images": [
+            "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/figures/BB-CSC.png"
+          ]
         },
         {
           "name": "BB-CSC-TC",
@@ -2318,7 +2327,10 @@
               "readmeContent": "# AppLayer\n"
             }
           ],
-          "readmeContent": "<!-- TODO: finish landing page -->\n# BB-SC\n\n![BB-SC](/figures/BB-SC.png)\n"
+          "readmeContent": "<!-- TODO: finish landing page -->\n# BB-SC\n\n![BB-SC](/figures/BB-SC.png)\n",
+          "images": [
+            "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/figures/BB-SC.png"
+          ]
         },
         {
           "name": "BB-SC-TC",
@@ -2548,5 +2560,8 @@
     }
   ],
   "readmeContent": "# Proposed-BuildingBlocks\n\nLanding page for all proposed building blocks; use the README to navigate through all the Building Blocks.\n\n## Implementation of new BBs / Change of README\n\nWhen Implementing a new BB please follow these [implementation guidelines](/other/utils/BB_Implementation_guideline.md).\n\nWhen wanting to make changes to the [README](/README.md), please make the changes to the [README_base](/other/utils/README_base.md) so that they can be accessed by the [README Generator](/other/scripts/readme_generator.py). After adding the changes, run the [README Generator](/other/scripts/readme_generator.py) locally and push the changes.\n\n## Releases\nA GitHub workflow creates a new realease at the first of every month. This release contains an Excel file listing all the BBs in the repository as they exist in the main branch at that time. The release can be found in the [Releases](https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks/releases) section of the repository.\n\n## BB Tags\n\n\nFirst tag of BB defines its location in git repo\n\n|Tag|Description|\n|----|----|\n|FC|Functional Cluster – Logical group of technically similar BBs|\n|BB-SC|Building Block Stack Component (In-Vehicle / On-Board)|\n|BB-CSC|Building Block Cloud Stack Component (Cloud / Off-Board)|\n|BB-MU|Building Block Mockup Unit (In-Vehicle / On-Board Component)|\n|BB-CMU|Building Block Cloud Mockup Unit (Cloud / Off-Board Component)|\n|BB-EST|Building Block Engineering & Support Tools (for In-Vehicle / On-Board Components)|\n|BB-CEST|Building Block Cloud Engineering & Support Tools (for Cloud / Off-Board Components)|\n|BB-SC-TC|Building Block Stack Component ToolChain (contains compatible set of Engineering & Support Tools and Mockup Units for In-Vehicle dev)|\n|BB-CSC-TC|Building Block Cloud Stack Component ToolChain ToolChain (contains compatible set of Engineering & Support Tools and Mockup Units for Cloud dev)|\n|S-BB|Supporting Building Blocks (Standards, API & Interface Definitions, standardized Data Model)|\n|BB-WE|Whatever Tag / Whitecard|\n\n## Process description\n\nBBs get collected in the [WorkInProgress folder](/WorkInProgress/). As soon as they have a name, a description, a state and a specified known implementation, they are moved up to the root. The BBs that were moved up, get deleted in the WorkInProgress folder.\n\n![Process description](/other/figures/Process_description.PNG)\n\n\n\n## Navigation\n- [BB-CEST](/BB-CEST/README.md)\n    - [BB_Eclipse_CSP](/BB-CEST/BB_Eclipse_CSP.md)\n    - [Development-Testing-and-Simulation-Environments](/BB-CEST/Development-Testing-and-Simulation-Environments/README.md)\n        - [Software-Development-Kits](/BB-CEST/Development-Testing-and-Simulation-Environments/Software-Development-Kits/README.md)\n        - [Cloud-Based-Development-Environments](/BB-CEST/Development-Testing-and-Simulation-Environments/Cloud-Based-Development-Environments/README.md)\n        - [Debugging-and-Monitoring](/BB-CEST/Development-Testing-and-Simulation-Environments/Debugging-and-Monitoring/README.md)\n        - [Integrated-Development-Environments](/BB-CEST/Development-Testing-and-Simulation-Environments/Integrated-Development-Environments/README.md)\n        - [Simulation-and-Emulation-Tools](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/README.md)\n            - [BB_SODAsim](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_SODAsim.md)\n            - [BB_Eclipse_openPASS](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Eclipse_openPASS.md)\n            - [BB_Eclipse_Cloe](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Eclipse_Cloe.md)\n            - [BB_Lichtblick](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Lichtblick.md)\n            - [BB_Eclipse_SCM](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Eclipse_SCM.md)\n            - [BB_Eclipse_esmini](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Eclipse_esmini.md)\n            - [BB_Eclipse_SUMO](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Eclipse_SUMO.md)\n            - [BB_Eclipse_Mosaic](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_Eclipse_Mosaic.md)\n            - [BB_OSTAR](/BB-CEST/Development-Testing-and-Simulation-Environments/Simulation-and-Emulation-Tools/BB_OSTAR.md)\n        - [Continuous-Integration-Continuous-Deployment](/BB-CEST/Development-Testing-and-Simulation-Environments/Continuous-Integration-Continuous-Deployment/README.md)\n        - [Performance-and-Load-Testing](/BB-CEST/Development-Testing-and-Simulation-Environments/Performance-and-Load-Testing/README.md)\n        - [Testing-Frameworks](/BB-CEST/Development-Testing-and-Simulation-Environments/Testing-Frameworks/README.md)\n    - [Operations-and-Maintenance](/BB-CEST/Operations-and-Maintenance/README.md)\n        - [Automation-and-Orchestration](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/README.md)\n            - [BB_Eclipse_SymphonyOrchestrationLayer](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/BB_Eclipse_SymphonyOrchestrationLayer.md)\n            - [BB_Eclipse_PullPiriPackageService](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/BB_Eclipse_PullPiriPackageService.md)\n            - [Configuration-as-Code](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Configuration-as-Code/README.md)\n            - [Policy-and-Compliance-Automation](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Policy-and-Compliance-Automation/README.md)\n            - [Event-Driven-Automation](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Event-Driven-Automation/README.md)\n            - [Data-Driven-Integration-via-Observations](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Data-Driven-Integration-via-Observations/README.md)\n            - [Workflow-Orchestration](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Workflow-Orchestration/README.md)\n            - [Automated-Testing-and-Validation](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Automated-Testing-and-Validation/README.md)\n            - [Task-Automation](/BB-CEST/Operations-and-Maintenance/Automation-and-Orchestration/Task-Automation/README.md)\n        - [Over-the-Air-Updates](/BB-CEST/Operations-and-Maintenance/Over-the-Air-Updates/README.md)\n        - [Monitoring-and-Observability](/BB-CEST/Operations-and-Maintenance/Monitoring-and-Observability/README.md)\n            - [BB_Eclipse_AnkaiosDashboard](/BB-CEST/Operations-and-Maintenance/Monitoring-and-Observability/BB_Eclipse_AnkaiosDashboard.md)\n            - [BB_Eclipse_MutoDashboard](/BB-CEST/Operations-and-Maintenance/Monitoring-and-Observability/BB_Eclipse_MutoDashboard.md)\n        - [Predictive-Maintenance](/BB-CEST/Operations-and-Maintenance/Predictive-Maintenance/README.md)\n        - [Lifecycle-Management](/BB-CEST/Operations-and-Maintenance/Lifecycle-Management/README.md)\n        - [Security-and-Compiance-in-Operation](/BB-CEST/Operations-and-Maintenance/Security-and-Compiance-in-Operation/README.md)\n        - [Incident-Management](/BB-CEST/Operations-and-Maintenance/Incident-Management/README.md)\n    - [Artificial-Intelligence-and-Machine-Learning](/BB-CEST/Artificial-Intelligence-and-Machine-Learning/README.md)\n        - [Model-Deployment-and-Inference](/BB-CEST/Artificial-Intelligence-and-Machine-Learning/Model-Deployment-and-Inference/README.md)\n        - [Data-Centric-AI-Development](/BB-CEST/Artificial-Intelligence-and-Machine-Learning/Data-Centric-AI-Development/README.md)\n        - [Monitoring-and-Feedback-Loop](/BB-CEST/Artificial-Intelligence-and-Machine-Learning/Monitoring-and-Feedback-Loop/README.md)\n        - \n\n[Content truncated due to length...]",
-  "briefDescription": "Landing page for all proposed building blocks; use the README to navigate through all the Building Blocks."
+  "briefDescription": "Landing page for all proposed building blocks; use the README to navigate through all the Building Blocks.",
+  "images": [
+    "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main/other/figures/Process_description.PNG"
+  ]
 }

@@ -377,6 +377,24 @@
   overflow-y: auto;
 }
 
+.detail-panel__images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.detail-panel__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #e3efd0;
+}
+
+.layout.theme-dark .detail-panel__image {
+  border-color: #3d4d35;
+}
+
 .detail-panel__empty {
   color: #8a9a74;
   padding: 32px 24px;
