@@ -656,42 +656,6 @@
   background: #f9fdf3;
 }
 
-.detail-panel__hierarchy {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2px;
-  padding: 8px 10px;
-  margin-bottom: 12px;
-  background: #f3f8e6;
-  border-radius: 8px;
-  border: 1px solid #d7e7c0;
-  font-size: 0.85rem;
-}
-
-.detail-panel__hierarchy-step {
-  display: inline-flex;
-  align-items: center;
-}
-
-.detail-panel__hierarchy-sep {
-  margin: 0 4px;
-  color: #8fa85f;
-  font-weight: 700;
-}
-
-.detail-panel__hierarchy-ancestor {
-  color: #5a7a2e;
-}
-
-.detail-panel__hierarchy-current {
-  font-weight: 700;
-  color: #2a3a19;
-  background: #ddefc0;
-  padding: 2px 8px;
-  border-radius: 6px;
-}
-
 .detail-panel__actions {
   display: flex;
   flex-direction: column;
@@ -865,24 +829,6 @@
 
 .layout.theme-dark .breadcrumbs__label {
   color: #7ba958;
-}
-
-.layout.theme-dark .detail-panel__hierarchy {
-  background: #222c1f;
-  border-color: #3d4d37;
-}
-
-.layout.theme-dark .detail-panel__hierarchy-ancestor {
-  color: #7ba958;
-}
-
-.layout.theme-dark .detail-panel__hierarchy-sep {
-  color: #5d7747;
-}
-
-.layout.theme-dark .detail-panel__hierarchy-current {
-  color: #eef6e8;
-  background: #2f4924;
 }
 
 .layout.theme-dark .overview-card__type-badge {
