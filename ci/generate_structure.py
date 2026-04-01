@@ -5,8 +5,85 @@ of a directory.
 """
 
 import json
+import re
 from pathlib import Path
 from sys import argv
+
+# GitHub raw content base URL for image normalization
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/CSA-FEDERATE/Proposed-BuildingBlocks/main"
+
+
+def extract_images(content: str) -> list[str] | None:
+    """Extract markdown image URLs and convert to absolute GitHub raw URLs.
+    
+    Only supports: ![alt](/absolute/path.png)
+    Ignores: relative paths, external URLs, HTML img tags
+    
+    Returns max 5 image URLs or None.
+    """
+    if not content:
+        return None
+    
+    # Markdown image pattern: ![alt](path)
+    pattern = r'!\[([^\]]*)\]\(([^)]+)\)'
+    matches = re.findall(pattern, content)
+    
+    images = []
+    
+    for alt, path in matches:
+        # Skip external URLs
+        if path.startswith('http://') or path.startswith('https://'):
+            continue
+        
+        # Only support absolute paths starting with /
+        if path.startswith('/'):
+            # Normalize to GitHub raw URL
+            full_url = f"{GITHUB_RAW_BASE}{path}"
+            images.append(full_url)
+        
+        # Stop at 5 images
+        if len(images) >= 5:
+            break
+    
+    return images if images else None
+
+
+def extract_brief_description(content: str) -> str | None:
+    """Extract first meaningful paragraph from README content.
+    
+    Skips headings, images, badges, comments, tables, code fences.
+    Returns truncated description (max 160 chars) or None.
+    """
+    if not content:
+        return None
+    
+    # Skip patterns: headings, images, badges, comments, tables, code fences, dividers
+    skip_prefixes = ('#', '![', '[![', '<!--', '|', '```', '---', '***', '- [', '1. ')
+    
+    paragraphs = []
+    current = []
+    
+    for line in content.split('\n'):
+        stripped = line.strip()
+        if not stripped:
+            if current:
+                paragraphs.append(' '.join(current))
+                current = []
+            continue
+        if any(stripped.startswith(p) for p in skip_prefixes):
+            continue
+        current.append(stripped)
+    
+    if current:
+        paragraphs.append(' '.join(current))
+    
+    # First substantial paragraph (>10 chars)
+    for p in paragraphs:
+        clean = p.strip()
+        if len(clean) > 10:
+            return clean[:157] + "..." if len(clean) > 160 else clean
+    
+    return None
 
 
 def traverse_directory(root_path, relative_to=None, is_root=False):
@@ -76,6 +153,14 @@ def traverse_directory(root_path, relative_to=None, is_root=False):
                 
             if readme_content:
                 node["readmeContent"] = readme_content
+                # Extract brief description for OverviewPanel cards
+                brief_description = extract_brief_description(readme_content)
+                if brief_description:
+                    node["briefDescription"] = brief_description
+                # Extract images for DetailPanel display
+                images = extract_images(readme_content)
+                if images:
+                    node["images"] = images
                 
         except PermissionError:
             # If we can't read a directory, note it

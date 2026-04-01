@@ -39,6 +39,23 @@ export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
       {node.readmeContent && (
         <div className="detail-panel__readme">{node.readmeContent}</div>
       )}
+
+      {node.images && node.images.length > 0 && (
+        <div className="detail-panel__images">
+          {node.images.map((url, idx) => (
+            <img
+              key={idx}
+              src={url}
+              alt={`Diagram ${idx + 1}`}
+              className="detail-panel__image"
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          ))}
+        </div>
+      )}
       <div className="detail-panel__actions">
         {onViewInTree && (
           <button
