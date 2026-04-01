@@ -227,6 +227,22 @@
   line-height: 1.4;
 }
 
+.overview-card__description {
+  color: #5a6a44;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.layout.theme-dark .overview-card__hint {
+  background: #2a3a24;
+  color: #a8d080;
+}
+
 .overview-card__hint {
   display: inline-flex;
   align-items: center;

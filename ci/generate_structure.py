@@ -9,6 +9,44 @@ from pathlib import Path
 from sys import argv
 
 
+def extract_brief_description(content: str) -> str | None:
+    """Extract first meaningful paragraph from README content.
+    
+    Skips headings, images, badges, comments, tables, code fences.
+    Returns truncated description (max 160 chars) or None.
+    """
+    if not content:
+        return None
+    
+    # Skip patterns: headings, images, badges, comments, tables, code fences, dividers
+    skip_prefixes = ('#', '![', '[![', '<!--', '|', '```', '---', '***', '- [', '1. ')
+    
+    paragraphs = []
+    current = []
+    
+    for line in content.split('\n'):
+        stripped = line.strip()
+        if not stripped:
+            if current:
+                paragraphs.append(' '.join(current))
+                current = []
+            continue
+        if any(stripped.startswith(p) for p in skip_prefixes):
+            continue
+        current.append(stripped)
+    
+    if current:
+        paragraphs.append(' '.join(current))
+    
+    # First substantial paragraph (>10 chars)
+    for p in paragraphs:
+        clean = p.strip()
+        if len(clean) > 10:
+            return clean[:157] + "..." if len(clean) > 160 else clean
+    
+    return None
+
+
 def traverse_directory(root_path, relative_to=None, is_root=False):
     """
     Recursively traverse a directory and build a hierarchical structure.
@@ -76,6 +114,10 @@ def traverse_directory(root_path, relative_to=None, is_root=False):
                 
             if readme_content:
                 node["readmeContent"] = readme_content
+                # Extract brief description for OverviewPanel cards
+                brief_description = extract_brief_description(readme_content)
+                if brief_description:
+                    node["briefDescription"] = brief_description
                 
         except PermissionError:
             # If we can't read a directory, note it

@@ -21,6 +21,7 @@ export interface BBNode {
   type: RepoEntryType;
   children?: BBNode[];
   readmeContent?: string;
+  briefDescription?: string;
 }
 
 export interface BBEdge {

@@ -1,6 +1,5 @@
 import type { BBNode } from "../types/bb";
 import {
-  formatOverviewName,
   getOverviewSections,
   hasDescendantOnlySearchMatch,
 } from "../lib/search";
@@ -38,7 +37,6 @@ export const OverviewPanel = ({
   return (
     <div className="overview-grid">
       {sections.map((section) => {
-        const overviewName = formatOverviewName(section.fullName);
         const isSelected = selectedId === section.id;
         const isFile = section.type === "blob";
         const hasNestedMatch = hasDescendantOnlySearchMatch(section, filter);
@@ -59,8 +57,10 @@ export const OverviewPanel = ({
             </div>
             <div className="overview-card__title">{section.name}</div>
 
-            {overviewName && (
-              <div className="overview-card__subtitle">{overviewName}</div>
+            {section.briefDescription && (
+              <div className="overview-card__description">
+                {section.briefDescription}
+              </div>
             )}
 
             {hasNestedMatch && (
