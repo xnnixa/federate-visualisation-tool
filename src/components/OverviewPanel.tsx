@@ -47,9 +47,16 @@ export const OverviewPanel = ({
           <button
             key={section.id}
             type="button"
-            className={`overview-card ${isSelected ? "is-selected" : ""}`}
+            className={`overview-card ${isSelected ? "is-selected" : ""} ${isFile ? "is-file" : ""}`}
             onClick={() => onSelect(section)}
           >
+            <div className="overview-card__header">
+              <span
+                className={`overview-card__type-badge ${isFile ? "type-file" : "type-folder"}`}
+              >
+                {isFile ? "File" : "Folder"}
+              </span>
+            </div>
             <div className="overview-card__title">{section.name}</div>
 
             {overviewName && (
@@ -57,7 +64,9 @@ export const OverviewPanel = ({
             )}
 
             {hasNestedMatch && (
-              <div className="overview-card__hint">Match found in nested items</div>
+              <div className="overview-card__hint">
+                Match found in nested items
+              </div>
             )}
 
             {!isFile && (
