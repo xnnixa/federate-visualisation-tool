@@ -70,10 +70,6 @@ export const OverviewPanel = ({
               <div className="overview-card__subtitle">{overviewName}</div>
             )}
 
-            {section.path && (
-              <div className="overview-card__path">{section.path}</div>
-            )}
-
             {hasNestedMatch && (
               <div className="overview-card__hint">
                 Match found in nested items
