@@ -115,19 +115,6 @@ export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
         </div>
       )}
 
-      {isFolder && folderChildren.length > 0 && (
-        <div className="detail-panel__children">
-          <strong>Sub-blocks</strong>
-          <ul className="detail-panel__children-list">
-            {folderChildren.map((child) => (
-              <li key={child.id} className="detail-panel__child-item">
-                📁 {child.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       <div className="detail-panel__actions">
         {onViewInTree && (
           <button
