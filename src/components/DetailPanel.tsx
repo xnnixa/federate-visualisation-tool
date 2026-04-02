@@ -84,25 +84,6 @@ export const DetailPanel = ({ node, meta, onViewInTree }: DetailPanelProps) => {
         <div className="detail-panel__title">{node.fullName}</div>
       )}
 
-      {pathParts.length > 0 && (
-        <nav className="detail-panel__hierarchy" aria-label="Node hierarchy">
-          {pathParts.map((part, i) => (
-            <span key={i} className="detail-panel__hierarchy-step">
-              {i > 0 && <span className="detail-panel__hierarchy-sep">›</span>}
-              <span
-                className={
-                  i === pathParts.length - 1
-                    ? "detail-panel__hierarchy-current"
-                    : "detail-panel__hierarchy-ancestor"
-                }
-              >
-                {part}
-              </span>
-            </span>
-          ))}
-        </nav>
-      )}
-
       <div className="detail-panel__meta">
         <div>
           <strong>Path:</strong> {node.path || "/"}
