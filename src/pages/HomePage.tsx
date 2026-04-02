@@ -11,6 +11,7 @@ import {
   getBuildingBlocks,
   type BuildingBlockNode,
 } from "../lib/parser";
+import {getLocalStorage, setLocalStorage} from "../lib/localStorage.ts";
 
 const toRepoEntryType = (type: BuildingBlockNode["type"]): BBNode["type"] =>
   type === "file" ? "blob" : "tree";
@@ -62,7 +63,14 @@ export const HomePage = () => {
   const [selected, setSelected] = useState<BBNode | undefined>();
   const [filter, setFilter] = useState("");
   const [view, setView] = useState<"overview" | "tree">("overview");
-  const [theme, setTheme] = useState<"light" | "dark">("light"); // dark mode: store current theme state
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (getLocalStorage("darkmode") === undefined) {
+      return "light"
+    } else {
+      return getLocalStorage("darkmode");
+    }
+
+  }); // dark mode: store current theme state
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -179,7 +187,7 @@ export const HomePage = () => {
     };
 
     void load();
-  }, []);
+  }, [theme]);
 
   if (loading) {
     return <div className="state">Loading Building Blocks...</div>;
@@ -259,8 +267,18 @@ export const HomePage = () => {
           <button
             type="button"
             className="theme-toggle" // dark mode: add a dedicated class for styling the toggle button
-            onClick={() =>
-              setTheme((prev) => (prev === "light" ? "dark" : "light"))
+            onClick={() => {
+              // Toggle darkmode
+              if (getLocalStorage("darkmode") === "dark") {
+                setTheme("light")
+                setLocalStorage("darkmode", "light")
+              } else {
+                setTheme("dark")
+                setLocalStorage("darkmode", "dark")
+              }
+            }
+
+
             } // dark mode: switch between light and dark theme
             aria-label={
               theme === "light" ? "Enable dark mode" : "Enable light mode"
