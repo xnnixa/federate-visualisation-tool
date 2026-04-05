@@ -215,13 +215,13 @@ export const HomePage = () => {
             >
               Root
             </button>
-            {navigationStack.map((node, index) => (
+            {navigationStack.slice(1).map((node, index) => (
               <span key={node.id}>
                 <span className="breadcrumbs__separator">/</span>
                 <button
                   type="button"
                   className="breadcrumbs__item"
-                  onClick={() => handleBreadcrumbClick(index - 1)}
+                  onClick={() => handleBreadcrumbClick(index)}
                 >
                   {node.name}
                 </button>
