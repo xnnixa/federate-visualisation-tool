@@ -232,7 +232,7 @@ export const HomePage = () => {
         ) : (
           <span className="breadcrumbs__label">Location:</span>
         )}
-        <span className="breadcrumbs__current">{currentRoot.name}</span>
+        <span className="breadcrumbs__current">{navigationStack.length > 0 ? currentRoot.name : "Root level"}</span>
       </nav>
     );
   };
@@ -302,7 +302,7 @@ export const HomePage = () => {
         <section className="tree-panel">
           {view === "overview" ? (
             <>
-              <h3 className="subtree-title">{currentRoot.name}</h3>
+              <h3 className="subtree-title">{navigationStack.length > 0 ? currentRoot.name : "Root level"}</h3>
               <OverviewPanel
                 root={currentRoot}
                 filter={filter}
