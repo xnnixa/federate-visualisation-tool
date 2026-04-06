@@ -1,79 +1,96 @@
-# React + TypeScript + Vite
+# FEDERATE Visualisation Tool
 
-## Description
-Live version available at https://xnnixa.github.io/federate-visualisation-tool/
+This project is a prototype visualization tool for exploring the [CSA-FEDERATE/Proposed-BuildingBlocks](https://github.com/CSA-FEDERATE/Proposed-BuildingBlocks) repository within the FEDERATE project.
+It provides an overview-based entry point, a tree view for repository navigation, and a detail panel for selected items.
+The goal is to make the repository easier to understand, especially for new developers without prior background knowledge.
 
+**Live demo (preview version):** https://xnnixa.github.io/federate-visualisation-tool/
 
-## Old readme
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Project Overview
 
-Currently, two official plugins are available:
+FEDERATE Building Blocks are organized in a deep directory hierarchy. This tool presents that hierarchy through a more approachable interface so that contributors can understand the structure and context more quickly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 2. Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The repository can be difficult to navigate and understand directly, especially for newcomers. This explorer exists to:
 
-## Expanding the ESLint configuration
+- lower the entry barrier for new contributors
+- provide faster navigation across folders and files
+- offer a simple way to inspect selected items and jump to GitHub
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 3. Current Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Overview view** for high-level exploration.
+- **Tree view** for path-based navigation.
+- **Detail panel** for selected item information.
+- **Search support** for locating matching nodes.
+- **Direct links** from selected items to GitHub.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+> For step-by-step usage instructions, see the user manual: [`docs/manual.md`](docs/manual.md).
+> For Vite/template-level maintenance notes, see [`docs/dev-notes.md`](docs/dev-notes.md).
+
+---
+
+## 4. Tech Stack
+
+- React
+- TypeScript
+- Vite
+- React Router
+- GitHub Pages (current live deployment)
+
+---
+
+## 5. Running the Project Locally
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 6. Build and Preview
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
 ```
+
+---
+
+## 7. Data Source
+
+The explorer currently uses a JSON representation of the Building Blocks repository structure as its primary data source.
+
+- Main input file: `src/assets/building-blocks_structure.json`
+- JSON generation is supported through CI helper scripts in `ci/`
+
+Short workflow example:
+
+```bash
+bash ci/transform.sh /path/to/Proposed-BuildingBlocks building-blocks_structure.json
+```
+
+---
+
+## 8. Project Structure (Simplified)
+
+```text
+src/
+  components/
+  lib/
+  pages/
+  assets/
+ci/
+test/
+docs/
+```
+
+---
