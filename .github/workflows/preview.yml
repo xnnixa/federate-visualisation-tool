@@ -16,6 +16,8 @@ on:
       - '**.ts'
       - '**.tsx'
       - 'public/**'
+      - '.github/workflows/**' 
+      
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
